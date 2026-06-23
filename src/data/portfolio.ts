@@ -13,8 +13,8 @@ export const personal = {
 export const impact = [
   {
     label: "Sync Time",
-    before: "12+ hours",
-    after: "<2 hours",
+    before: "24+ hours",
+    after: "<3 hours",
     description: "Amazon catalog synchronization reduced",
   },
   {
@@ -87,7 +87,7 @@ export const featuredSystems: FeaturedSystem[] = [
     summary:
       "A comprehensive PIM platform enabling businesses to manage product catalogs across multiple channels with validation, localization, marketplace synchronization, and AI-powered content generation.",
     problem:
-      "E-commerce businesses struggled with managing product data across multiple marketplaces. Catalog synchronization to Amazon took 12+ hours, product validation was error-prone, and managing parent-child product relationships was complex.",
+      "E-commerce businesses struggled with managing product data across multiple marketplaces. Catalog synchronization to Amazon took 24+ hours, product validation was error-prone, and managing parent-child product relationships was complex.",
     responsibilities:
       "Owned the catalog synchronization system, product validation engine, marketplace integration layer, and AI content generation features.",
     architecture:
@@ -101,11 +101,11 @@ export const featuredSystems: FeaturedSystem[] = [
       "Product merge system with rollback",
     ],
     challenges:
-      "Reducing Amazon catalog sync time from 12+ hours to under 2 hours required a fundamental redesign of the sync pipeline, including batched processing, delta detection, and marketplace-optimized data transformation.",
+      "Reducing Amazon catalog sync time from 24+ hours to under 3 hours required a fundamental redesign of the sync pipeline, including batched processing, delta detection, and marketplace-optimized data transformation.",
     outcomes:
       "Reduced sync time by 85%, built a validation engine supporting tens of thousands of rules, and successfully delivered live onboarding for multiple clients.",
     achievements: [
-      "Reduced Amazon sync from 12+ hours to under 2 hours",
+      "Reduced Amazon sync from 24+ hours to under 3 hours",
       "Built validation engine supporting 10,000+ business rules",
       "Designed product merge system with recovery workflows",
       "Delivered successful live client onboarding",
