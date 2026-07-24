@@ -6,10 +6,13 @@
   --color-surface: #111111;
   --color-surface-elevated: #171717;
   --color-border: #262626;
+  --color-border-hover: #404040;
   --color-text-primary: #FAFAFA;
   --color-text-secondary: #A1A1AA;
   --color-text-muted: #71717A;
   --color-accent: #FFFFFF;
+  --color-accent-hover: #E4E4E7;
+  --color-selection: rgba(255, 255, 255, 0.15);
   --color-success: #22C55E;
   --font-sans: var(--font-geist-sans), Inter, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), monospace;
@@ -17,7 +20,7 @@
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #262626 transparent;
+  scrollbar-color: var(--color-border) transparent;
 }
 
 html {
@@ -25,16 +28,16 @@ html {
 }
 
 body {
-  background: #0A0A0A;
-  color: #FAFAFA;
+  background: var(--color-background);
+  color: var(--color-text-primary);
   font-family: var(--font-geist-sans), Inter, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background: rgba(255, 255, 255, 0.15);
-  color: #FAFAFA;
+  background: var(--color-selection);
+  color: var(--color-text-primary);
 }
 
 /* Reveal animation utilities */

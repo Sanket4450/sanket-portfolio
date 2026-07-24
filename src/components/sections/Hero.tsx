@@ -27,19 +27,19 @@ export default function Hero() {
       <div className="section-container w-full">
         <div className="max-w-[700px]">
           <Reveal delay={0}>
-            <h1 className="text-[64px] leading-[1.05] font-bold tracking-[-0.03em] text-[#FAFAFA] mb-6 sm:text-[72px] lg:text-[80px]">
+            <h1 className="text-[64px] leading-[1.05] font-bold tracking-[-0.03em] text-text-primary mb-6 sm:text-[72px] lg:text-[80px]">
               {personal.name}
             </h1>
           </Reveal>
 
           <Reveal delay={100}>
-            <p className="text-[28px] sm:text-[32px] lg:text-[36px] leading-[1.3] font-medium tracking-[-0.02em] text-[#A1A1AA] mb-6">
+            <p className="text-[28px] sm:text-[32px] lg:text-[36px] leading-[1.3] font-medium tracking-[-0.02em] text-text-secondary mb-6">
               {personal.headline}
             </p>
           </Reveal>
 
           <Reveal delay={200}>
-            <p className="text-lg leading-[1.7] text-[#71717A] mb-10 max-w-[600px]">
+            <p className="text-lg leading-[1.7] text-text-muted mb-10 max-w-[600px]">
               {personal.supporting}
             </p>
           </Reveal>
@@ -48,8 +48,9 @@ export default function Hero() {
             <div className="flex flex-wrap items-center gap-3">
               <a
                 href={personal.resumeUrl}
-                download
-                className="inline-flex items-center gap-2 h-11 px-6 text-sm font-medium rounded-lg bg-[#FAFAFA] text-[#0A0A0A] hover:bg-[#E4E4E7] transition-colors duration-200"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 h-11 px-6 text-sm font-medium rounded-lg bg-text-primary text-background hover:bg-accent-hover transition-colors duration-200"
               >
                 <FileText className="w-4 h-4" />
                 Resume
@@ -58,7 +59,7 @@ export default function Hero() {
                 href={personal.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 h-11 px-5 text-sm font-medium rounded-lg border border-[#262626] text-[#A1A1AA] hover:text-[#FAFAFA] hover:border-[#404040] transition-colors duration-200"
+                className="inline-flex items-center gap-2 h-11 px-5 text-sm font-medium rounded-lg border border-border text-text-secondary hover:text-text-primary hover:border-border-hover transition-colors duration-200"
               >
                 <LinkedInIcon className="w-4 h-4" />
                 LinkedIn
@@ -67,14 +68,14 @@ export default function Hero() {
                 href={personal.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 h-11 px-5 text-sm font-medium rounded-lg border border-[#262626] text-[#A1A1AA] hover:text-[#FAFAFA] hover:border-[#404040] transition-colors duration-200"
+                className="inline-flex items-center gap-2 h-11 px-5 text-sm font-medium rounded-lg border border-border text-text-secondary hover:text-text-primary hover:border-border-hover transition-colors duration-200"
               >
                 <GitHubIcon className="w-4 h-4" />
                 GitHub
               </a>
               <a
                 href={`mailto:${personal.email}`}
-                className="inline-flex items-center gap-2 h-11 px-5 text-sm font-medium rounded-lg border border-[#262626] text-[#A1A1AA] hover:text-[#FAFAFA] hover:border-[#404040] transition-colors duration-200"
+                className="inline-flex items-center gap-2 h-11 px-5 text-sm font-medium rounded-lg border border-border text-text-secondary hover:text-text-primary hover:border-border-hover transition-colors duration-200"
               >
                 <Mail className="w-4 h-4" />
                 Contact
@@ -89,7 +90,7 @@ export default function Hero() {
         <Reveal delay={600}>
           <a
             href="#impact"
-            className="flex flex-col items-center gap-2 text-[#71717A] hover:text-[#A1A1AA] transition-colors duration-200"
+            className="flex flex-col items-center gap-2 text-text-muted hover:text-text-secondary transition-colors duration-200"
           >
             <span className="text-xs tracking-widest uppercase">Scroll</span>
             <ArrowDown className="w-4 h-4 animate-pulse" />

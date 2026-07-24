@@ -7,7 +7,7 @@ export const personal = {
   email: 'hello@sankettalaviya.me',
   linkedin: 'https://www.linkedin.com/in/sankettalaviya/',
   github: 'https://github.com/Sanket4450/',
-  resumeUrl: '/resume/sanket-talaviya-resume.pdf',
+  resumeUrl: '/resume/sanket_talaviya_resume.pdf',
 }
 
 export const impact = [

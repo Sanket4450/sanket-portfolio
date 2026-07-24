@@ -67,7 +67,8 @@ export default function Contact() {
             </a>
             <a
               href={personal.resumeUrl}
-              download
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 h-12 px-6 text-sm font-medium rounded-lg border border-[#262626] text-[#A1A1AA] hover:text-[#FAFAFA] hover:border-[#404040] transition-colors duration-200"
             >
               <FileText className="w-4 h-4" />
