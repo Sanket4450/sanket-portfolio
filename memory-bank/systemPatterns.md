@@ -7,7 +7,7 @@ sanket-portfolio/
 ├── src/
 │   ├── app/                    # Next.js App Router entry points
 │   │   ├── globals.css         # Global styles, theme tokens, utility classes
-│   │   ├── icon.svg            # Favicon
+│   │   ├── icon.png            # Favicon (Profile image)
 │   │   ├── layout.tsx          # Root layout (metadata, fonts, JSON-LD, body)
 │   │   ├── page.tsx            # Single-page composition (all sections)
 │   │   └── sitemap.ts          # Static sitemap generation
@@ -26,8 +26,7 @@ sanket-portfolio/
 │   └── data/
 │       └── portfolio.ts        # All portfolio content + TypeScript types
 ├── public/
-│   └── resume/
-│       └── sanket_talaviya_resume.pdf
+│   └── sanket_talaviya_resume.pdf
 ├── context/
 │   └── context.md              # Human-authored design brief (not AI-generated)
 ├── memory-bank/                # AI context documentation
@@ -62,7 +61,7 @@ sanket-portfolio/
 - **No atomic design or component library.** Components are purpose-built for this single page.
 - Section components follow a consistent structural pattern:
   ```
-  <section id="..." className="section-padding border-t border-[#262626]">
+  <section id="..." className="section-padding border-t border-border">
     <div className="section-container">
       <Reveal>{/* label */}</Reveal>
       <Reveal>{/* heading */}</Reveal>

@@ -20,21 +20,23 @@ function LinkedInIcon({ className }: { className?: string }) {
 
 export default function Contact() {
   return (
-    <section id="contact" className="section-padding border-t border-[#262626]">
+    <section
+      id="contact"
+      className="section-padding border-t border-border">
       <div className="section-container text-center">
         <Reveal>
-          <p className="text-sm font-medium tracking-widest uppercase text-[#71717A] mb-4">
+          <p className="text-sm font-medium tracking-widest uppercase text-text-muted mb-4">
             Contact
           </p>
-          <h2 className="text-[36px] sm:text-[44px] leading-[1.1] font-bold tracking-[-0.03em] text-[#FAFAFA] mb-6">
+          <h2 className="text-[36px] sm:text-[44px] leading-[1.1] font-bold tracking-[-0.03em] text-foreground mb-6">
             Let's Build Something Great
           </h2>
         </Reveal>
 
         <Reveal delay={100}>
-          <p className="text-lg text-[#A1A1AA] mb-12 max-w-[500px] mx-auto leading-[1.7]">
-            I'm open to opportunities with remote startups, SaaS companies,
-            and product engineering teams.
+          <p className="text-lg text-text-secondary mb-12 max-w-[500px] mx-auto leading-[1.7]">
+            I'm open to opportunities with remote startups, SaaS companies, and
+            product engineering teams.
           </p>
         </Reveal>
 
@@ -42,8 +44,7 @@ export default function Contact() {
           <div className="flex flex-wrap items-center justify-center gap-3">
             <a
               href={`mailto:${personal.email}`}
-              className="inline-flex items-center gap-2 h-12 px-6 text-sm font-medium rounded-lg bg-[#FAFAFA] text-[#0A0A0A] hover:bg-[#E4E4E7] transition-colors duration-200"
-            >
+              className="inline-flex items-center gap-2 h-12 px-6 text-sm font-medium rounded-lg bg-foreground text-background hover:bg-accent-hover transition-colors duration-200">
               <Mail className="w-4 h-4" />
               {personal.email}
             </a>
@@ -51,8 +52,7 @@ export default function Contact() {
               href={personal.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 h-12 px-6 text-sm font-medium rounded-lg border border-[#262626] text-[#A1A1AA] hover:text-[#FAFAFA] hover:border-[#404040] transition-colors duration-200"
-            >
+              className="inline-flex items-center gap-2 h-12 px-6 text-sm font-medium rounded-lg border border-border text-text-secondary hover:text-foreground hover:border-border-hover transition-colors duration-200">
               <LinkedInIcon className="w-4 h-4" />
               LinkedIn
             </a>
@@ -60,8 +60,7 @@ export default function Contact() {
               href={personal.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 h-12 px-6 text-sm font-medium rounded-lg border border-[#262626] text-[#A1A1AA] hover:text-[#FAFAFA] hover:border-[#404040] transition-colors duration-200"
-            >
+              className="inline-flex items-center gap-2 h-12 px-6 text-sm font-medium rounded-lg border border-border text-text-secondary hover:text-foreground hover:border-border-hover transition-colors duration-200">
               <GitHubIcon className="w-4 h-4" />
               GitHub
             </a>
@@ -69,8 +68,7 @@ export default function Contact() {
               href={personal.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 h-12 px-6 text-sm font-medium rounded-lg border border-[#262626] text-[#A1A1AA] hover:text-[#FAFAFA] hover:border-[#404040] transition-colors duration-200"
-            >
+              className="inline-flex items-center gap-2 h-12 px-6 text-sm font-medium rounded-lg border border-border text-text-secondary hover:text-foreground hover:border-border-hover transition-colors duration-200">
               <FileText className="w-4 h-4" />
               Resume
             </a>
@@ -78,5 +76,5 @@ export default function Contact() {
         </Reveal>
       </div>
     </section>
-  );
+  )
 }

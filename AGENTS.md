@@ -70,7 +70,7 @@ memory-bank/              # AI context documentation (this system)
 - **Default exports only.** Every component uses `export default function ComponentName()`.
 - **Client components explicitly marked.** Any component using hooks (`useState`, `useEffect`, `useRef`) starts with `"use client"`.
 - **Data-driven rendering.** Components receive no props; they import data directly from `@/data/portfolio`.
-- **Section components** follow a consistent structure: `<section id="..." className="section-padding border-t border-[#262626]">` → `<div className="section-container">` → `<Reveal>` blocks for animated content.
+- **Section components** follow a consistent structure: `<section id="..." className="section-padding border-t border-border">` → `<div className="section-container">` → `<Reveal>` blocks for animated content.
 - **Sections are self-contained.** Each section has its own imports, its own `Reveal` usage, and handles its own responsive layout.
 - **No prop drilling.** Data flows from `portfolio.ts` directly into the component that renders it.
 

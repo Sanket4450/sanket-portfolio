@@ -5,10 +5,17 @@ export const personal = {
   supporting:
     'I build and scale product systems that power business operations, automate workflows, and solve complex engineering challenges.',
   email: 'hello@sankettalaviya.me',
-  linkedin: 'https://www.linkedin.com/in/sankettalaviya/',
-  github: 'https://github.com/Sanket4450/',
-  resumeUrl: '/resume/sanket_talaviya_resume.pdf',
+  linkedin: 'https://www.linkedin.com/in/sankettalaviya',
+  github: 'https://github.com/Sanket4450',
+  resumeUrl: '/sanket_talaviya_resume.pdf',
 }
+
+export const navLinks = [
+  { label: 'About', href: '#about' },
+  { label: 'Systems', href: '#systems' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Contact', href: '#contact' },
+]
 
 export const impact = [
   {
@@ -217,30 +224,23 @@ export type SkillGroup = {
 
 export const skillGroups: SkillGroup[] = [
   {
-    category: "Backend",
-    skills: ["Node.js", "TypeScript", "NestJS", "GraphQL", "REST APIs", "Microservices"],
+    category: 'Backend',
+    skills: ['Node.js', 'TypeScript', 'NestJS', 'GraphQL', 'REST APIs', 'Microservices'],
   },
   {
-    category: "Frontend",
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+    category: 'Frontend',
+    skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
   },
   {
-    category: "Data",
-    skills: ["PostgreSQL", "MongoDB", "Redis", "Prisma", "Drizzle"],
+    category: 'Database',
+    skills: ['PostgreSQL', 'MongoDB', 'Redis', 'Prisma', 'Drizzle'],
   },
   {
-    category: "Cloud",
-    skills: ["AWS", "Docker", "CI/CD", "Nginx"],
+    category: 'Cloud',
+    skills: ['AWS', 'Docker', 'CI/CD', 'Nginx'],
   },
   {
-    category: "AI",
-    skills: ["OpenAI", "Ollama", "AI Workflow Integration"],
+    category: 'AI',
+    skills: ['OpenAI', 'Ollama', 'AI Workflow Integration'],
   },
-];
-
-export const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Systems", href: "#systems" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
-];
+]
