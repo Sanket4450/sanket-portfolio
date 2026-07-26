@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from 'next/script'
 import "./globals.css";
+import { expertise, metaKeywords, personal } from '@/utils/data'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,53 +15,43 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://sankettalaviya.me'),
+  metadataBase: new URL(personal.website),
 
   title: {
-    default: 'Sanket Talaviya | Full Stack Engineer',
-    template: '%s | Sanket Talaviya',
+    default: `${personal.name} | ${personal.designation}`,
+    template: '%s | %s',
   },
 
-  description:
-    'Full Stack Engineer building SaaS products, AI workflows, multi-tenant platforms, and data-intensive systems. I build and scale product systems that power business operations.',
+  description: personal.headline,
 
-  keywords: [
-    'Sanket Talaviya',
-    'Full Stack Engineer',
-    'Software Engineer',
-    'SaaS Engineer',
-    'AI Engineer',
-    'Node.js Developer',
-    'TypeScript Developer',
-    'NestJS',
-    'Next.js',
-    'Backend Engineer',
-    'System Design',
-    'PostgreSQL',
-    'Product Engineer',
-    'Multi-Tenant Systems',
-    'AI Workflows',
-  ],
+  keywords: metaKeywords,
 
-  authors: [{ name: 'Sanket Talaviya' }],
-  creator: 'Sanket Talaviya',
-  publisher: 'Sanket Talaviya',
+  authors: [{ name: personal.name }],
+  creator: personal.name,
+  publisher: personal.name,
 
   openGraph: {
-    title: 'Sanket Talaviya | Full Stack Engineer',
-    description:
-      'Full Stack Engineer building SaaS products, AI workflows, multi-tenant platforms, and data-intensive systems.',
-    url: 'https://sankettalaviya.me',
-    siteName: 'Sanket Talaviya',
+    title: `${personal.name} | ${personal.designation}`,
+    description: personal.headline,
+    url: personal.website,
+    siteName: personal.name,
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: personal.metaDataImage,
+        width: 512,
+        height: 512,
+        alt: `${personal.name} - ${personal.designation}`,
+      },
+    ],
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Sanket Talaviya | Full Stack Engineer',
-    description:
-      'Full Stack Engineer building SaaS products, AI workflows, multi-tenant platforms, and data-intensive systems.',
+    title: `${personal.name} | ${personal.designation}`,
+    description: personal.headline,
+    images: [personal.metaDataImage],
   },
 
   robots: {
@@ -73,36 +64,22 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: 'https://sankettalaviya.me',
+    canonical: personal.website,
   },
 }
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: 'Sanket Talaviya',
-  givenName: 'Sanket',
-  familyName: 'Talaviya',
-  url: 'https://sankettalaviya.me',
-  jobTitle: 'Full Stack Engineer',
-  description:
-    'Full Stack Engineer building SaaS products, AI workflows, multi-tenant platforms, and data-intensive systems.',
-  sameAs: [
-    'https://www.linkedin.com/in/sankettalaviya/',
-    'https://github.com/Sanket4450/',
-  ],
-  knowsAbout: [
-    'SaaS',
-    'AI Workflows',
-    'Multi-Tenant Architecture',
-    'System Design',
-    'Node.js',
-    'TypeScript',
-    'PostgreSQL',
-    'Event-Driven Architecture',
-    'Real-Time Systems',
-    'Product Engineering',
-  ],
+  name: personal.name,
+  givenName: personal.nickName,
+  familyName: personal.lastName,
+  url: personal.website,
+  image: personal.metaDataImage,
+  jobTitle: personal.designation,
+  description: personal.headline,
+  sameAs: [personal.linkedin, personal.github],
+  knowsAbout: expertise,
 }
 
 export default function RootLayout({

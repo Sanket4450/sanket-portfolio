@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, type MouseEvent } from 'react'
-import { navLinks, personal } from "@/data/portfolio";
+import { navLinks, personal } from '@/utils/data'
 import { Menu, X } from "lucide-react";
 
 export default function Nav() {
