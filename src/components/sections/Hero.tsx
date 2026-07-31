@@ -39,6 +39,13 @@ export default function Hero() {
                 Resume
               </a>
               <a
+                href={`mailto:${personal.email}`}
+                className="border-border text-text-secondary hover:text-text-primary hover:border-border-hover inline-flex h-11 items-center gap-2 rounded-lg border px-5 text-sm font-medium transition-colors duration-200"
+              >
+                <Mail className="h-4 w-4" />
+                Contact
+              </a>
+              <a
                 href={personal.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -55,13 +62,6 @@ export default function Hero() {
               >
                 <GitHubIcon className="h-4 w-4" />
                 GitHub
-              </a>
-              <a
-                href={`mailto:${personal.email}`}
-                className="border-border text-text-secondary hover:text-text-primary hover:border-border-hover inline-flex h-11 items-center gap-2 rounded-lg border px-5 text-sm font-medium transition-colors duration-200"
-              >
-                <Mail className="h-4 w-4" />
-                Contact
               </a>
             </div>
           </Reveal>

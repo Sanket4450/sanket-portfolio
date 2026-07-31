@@ -1,8 +1,6 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/sections/Hero";
-import Impact from "@/components/sections/Impact";
-import Systems from "@/components/sections/Systems";
-import EngineeringInterests from "@/components/sections/EngineeringInterests";
+import Projects from '@/components/sections/Projects'
 import Experience from "@/components/sections/Experience";
 import Skills from "@/components/sections/Skills";
 import Contact from "@/components/sections/Contact";
@@ -14,14 +12,12 @@ export default function Home() {
       <Nav />
       <main className="flex-1">
         <Hero />
-        <Impact />
-        <Systems />
-        <EngineeringInterests />
         <Experience />
+        <Projects />
         <Skills />
         <Contact />
       </main>
       <Footer />
     </>
-  );
+  )
 }

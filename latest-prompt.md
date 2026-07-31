@@ -1,1 +1,0 @@
-- now clicking on "Resume" is directly downloading it, I want you to open the file in a new tab instead of downloading it.

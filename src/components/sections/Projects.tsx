@@ -2,9 +2,9 @@ import { featuredSystems } from '@/utils/data'
 import Reveal from '@/components/Reveal'
 import { Check, ArrowRight } from 'lucide-react'
 
-export default function Systems() {
+export default function Projects() {
   return (
-    <section id="systems" className="section-padding border-border border-t">
+    <section id="projects" className="section-padding border-border border-t">
       <div className="section-container">
         <Reveal>
           <p className="text-text-muted mb-3 text-sm font-medium tracking-widest uppercase">

@@ -12,10 +12,24 @@ export type FeaturedSystem = {
   achievements: string[]
 }
 
+export type TechnologyGroup = {
+  category: string
+  items: string[]
+}
+
+export type ExperienceProject = {
+  name: string
+  description: string
+}
+
 export type Experience = {
   company: string
   role: string
-  period: string
+  duration: string
+  summary: string
+  projects: ExperienceProject[]
+  highlights: string[]
+  technologies: TechnologyGroup[]
 }
 
 export type SkillGroup = {

@@ -3,7 +3,7 @@ import Reveal from '@/components/Reveal'
 
 export default function Skills() {
   return (
-    <section className="section-padding border-border border-t">
+    <section id="skills" className="section-padding border-border border-t">
       <div className="section-container">
         <Reveal>
           <p className="text-text-muted mb-3 text-sm font-medium tracking-widest uppercase">
