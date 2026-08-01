@@ -8,10 +8,13 @@ export default function Footer() {
           <p className="text-text-muted text-sm">
             &copy; {new Date().getFullYear()} {personal.name}
           </p>
-          <div className="text-text-secondary flex items-center gap-4 text-sm">
-            <span>{personal.designation}</span>
-            <span className="text-border">|</span>
-            <span> {footer.tagline.join(' · ')}</span>
+          <div className="text-text-secondary flex items-center text-sm">
+            {footer.tagline.map((item, index) => (
+              <span key={item} className="flex items-center">
+                {index > 0 && <span className="text-text-muted mx-2">•</span>}
+                {item}
+              </span>
+            ))}
           </div>
         </div>
       </div>

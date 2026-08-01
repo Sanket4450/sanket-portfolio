@@ -56,7 +56,6 @@ export const navLinks = [
   { label: 'Contact', href: '#contact' },
 ]
 
-
 export const experienceSection = {
   eyebrow: 'Experience',
   title: 'Building scalable software that powers real businesses.',
@@ -76,6 +75,14 @@ export const skillsSection = {
   title: 'Engineering Capabilities',
   description:
     'The technologies, architectural patterns, and engineering practices I use to build scalable production software.',
+}
+
+export const contactSection = {
+  eyebrow: 'Contact',
+  title: "Let's Build What's Next",
+  description:
+    "I'm currently open to full-time product engineering opportunities with startups and software companies building ambitious products at scale.",
+  availability: ['Based in India', 'Open to Remote', 'Open to Full-Time Opportunities'],
 }
 
 export const impact = [
@@ -101,7 +108,6 @@ export const impact = [
     description: 'Content generation & outreach automation',
   },
 ]
-
 
 export const experiences: Experience[] = [
   {
@@ -504,7 +510,6 @@ export const engineeringInterests = [
   'Product Infrastructure',
 ]
 
-
 export const skillGroups: SkillGroup[] = [
   {
     category: 'Backend Engineering',
@@ -564,12 +569,6 @@ export const skillGroups: SkillGroup[] = [
   },
 ]
 
-export const contact = {
-  title: "Let's Build Something Great",
-  description:
-    "I'm open to opportunities with remote startups, SaaS companies, and product engineering teams.",
-}
-
 export const footer = {
-  tagline: ['SaaS', 'AI', 'Systems'],
+  tagline: ['Product Engineering', 'SaaS', 'AI'],
 }
