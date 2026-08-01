@@ -72,7 +72,7 @@ export default function Hero() {
       <div className="absolute bottom-10 left-1/2 hidden -translate-x-1/2 sm:block">
         <Reveal delay={600}>
           <a
-            href="#impact"
+            href="#about"
             className="text-text-muted hover:text-text-secondary flex flex-col items-center gap-2 transition-colors duration-200"
           >
             <span className="text-xs tracking-widest uppercase">Scroll</span>

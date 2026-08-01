@@ -1,99 +1,166 @@
-import { featuredSystems } from '@/utils/data'
+import { projects, projectsSection } from '@/utils/data'
 import Reveal from '@/components/Reveal'
-import { Check, ArrowRight } from 'lucide-react'
+import type { Project, TechnologyGroup } from '@/types/index.type'
+
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="text-text-muted mb-4 text-[11px] font-medium tracking-widest uppercase">
+      {children}
+    </p>
+  )
+}
+
+function ProjectAttribution({ project }: { project: Project }) {
+  const label = project.type === 'professional' ? 'Professional Project' : 'Personal Project'
+
+  return (
+    <p className="text-text-muted text-sm leading-relaxed">
+      {label}
+      {project.company && (
+        <>
+          {' '}
+          · Built at <span className="text-text-secondary font-medium">{project.company}</span>
+        </>
+      )}
+    </p>
+  )
+}
+
+function EngineeringHighlights({ items }: { items: string[] }) {
+  return (
+    <ul className="space-y-3">
+      {items.map(item => (
+        <li key={item} className="text-text-secondary flex gap-3 text-[15px] leading-relaxed">
+          <span className="text-text-muted mt-[0.35em] shrink-0 text-[10px] select-none">▸</span>
+          <span className="max-w-[620px]">{item}</span>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+function TechnologyStack({ groups }: { groups: TechnologyGroup[] }) {
+  return (
+    <div className="flex flex-col gap-y-4">
+      {groups.map(group => (
+        <div key={group.category}>
+          <p className="text-text-muted mb-3 text-[11px] font-medium tracking-widest uppercase">
+            {group.category}
+          </p>
+          <div className="flex flex-wrap gap-1.5">
+            {group.items.map(tech => (
+              <span
+                key={tech}
+                className="bg-surface border-border text-text-muted inline-block rounded-md border px-2.5 py-1 text-xs"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function Outcomes({ items }: { items: string[] }) {
+  return (
+    <ul className="space-y-3">
+      {items.map(item => (
+        <li key={item} className="text-text-secondary flex gap-3 text-[15px] leading-relaxed">
+          <span className="text-text-muted mt-[0.35em] shrink-0 text-[10px] select-none">▸</span>
+          <span className="max-w-[620px]">{item}</span>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+function ProjectCard({ project, delay }: { project: Project; delay: number }) {
+  return (
+    <article>
+      <Reveal delay={delay}>
+        {/* ── Header ────────────────────────────────────────── */}
+        <div className="mb-[32px]">
+          <p className="text-text-muted mb-3 text-[11px] font-medium tracking-widest uppercase">
+            {project.category}
+          </p>
+          <h3 className="text-foreground mb-1 text-2xl font-bold tracking-[-0.02em]">
+            {project.title}
+          </h3>
+          <ProjectAttribution project={project} />
+        </div>
+      </Reveal>
+
+      <div className="grid grid-cols-1 gap-x-14 gap-y-10 lg:grid-cols-[1fr_400px]">
+        {/* ── Left: Narrative + Engineering Depth ───────────── */}
+        <div>
+          {/* Overview */}
+          <Reveal delay={delay + 50}>
+            <p className="text-text-secondary mb-[40px] max-w-[560px] text-[15px] leading-relaxed">
+              {project.overview}
+            </p>
+          </Reveal>
+
+          {/* Engineering Highlights */}
+          <Reveal delay={delay + 100}>
+            <SectionLabel>Engineering Highlights</SectionLabel>
+          </Reveal>
+          <Reveal delay={delay + 150}>
+            <EngineeringHighlights items={project.engineeringHighlights} />
+          </Reveal>
+        </div>
+
+        {/* ── Right: Technology + Outcomes ──────────────────── */}
+        <div>
+          {/* Technology Stack */}
+          <Reveal delay={delay + 200} className='mt-0.5'>
+            <SectionLabel>Technology Stack</SectionLabel>
+            <TechnologyStack groups={project.technologies} />
+          </Reveal>
+
+          {/* Outcomes */}
+          <Reveal delay={delay + 250}>
+            <hr className="border-border my-6" />
+            <SectionLabel>Outcomes</SectionLabel>
+            <Outcomes items={project.outcomes} />
+          </Reveal>
+        </div>
+      </div>
+    </article>
+  )
+}
 
 export default function Projects() {
   return (
     <section id="projects" className="section-padding border-border border-t">
       <div className="section-container">
+        {/* Section Header */}
         <Reveal>
           <p className="text-text-muted mb-3 text-sm font-medium tracking-widest uppercase">
-            Featured Systems
+            {projectsSection.eyebrow}
           </p>
-          <h2 className="text-foreground mb-16 text-[32px] leading-[1.15] font-bold tracking-[-0.02em] sm:text-[36px]">
-            Products I've Built & Owned
+        </Reveal>
+
+        <Reveal delay={50}>
+          <h2 className="text-foreground mb-4 max-w-[650px] text-[32px] leading-[1.15] font-bold tracking-[-0.02em] sm:text-[36px]">
+            {projectsSection.title}
           </h2>
         </Reveal>
 
-        <div className="flex flex-col gap-24">
-          {featuredSystems.map((system, i) => (
-            <Reveal key={system.id} delay={i * 100}>
-              <article className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_380px] lg:gap-16">
-                {/* Main content */}
-                <div>
-                  <div className="mb-6">
-                    <p className="text-text-muted mb-3 text-xs font-medium tracking-widest uppercase">
-                      {system.positioning}
-                    </p>
-                    <h3 className="text-foreground text-[28px] leading-[1.15] font-bold tracking-[-0.02em] sm:text-[32px]">
-                      {system.title}
-                    </h3>
-                  </div>
+        <Reveal delay={100}>
+          <p className="text-text-secondary mb-16 max-w-[700px] text-[15px] leading-relaxed">
+            {projectsSection.description}
+          </p>
+        </Reveal>
 
-                  {/* Summary */}
-                  <p className="text-text-secondary mb-8 text-lg leading-[1.7]">{system.summary}</p>
-
-                  {/* Problem */}
-                  <div className="mb-6">
-                    <h4 className="text-foreground mb-2 text-sm font-semibold">Problem</h4>
-                    <p className="text-text-secondary leading-[1.7]">{system.problem}</p>
-                  </div>
-
-                  {/* Responsibilities */}
-                  <div className="mb-6">
-                    <h4 className="text-foreground mb-2 text-sm font-semibold">Role</h4>
-                    <p className="text-text-secondary leading-[1.7]">{system.responsibilities}</p>
-                  </div>
-
-                  {/* Architecture */}
-                  <div className="mb-6">
-                    <h4 className="text-foreground mb-2 text-sm font-semibold">Architecture</h4>
-                    <p className="text-text-secondary leading-[1.7]">{system.architecture}</p>
-                  </div>
-
-                  {/* Challenges */}
-                  <div className="mb-6">
-                    <h4 className="text-foreground mb-2 text-sm font-semibold">Key Challenge</h4>
-                    <p className="text-text-secondary leading-[1.7]">{system.challenges}</p>
-                  </div>
-
-                  {/* Outcomes */}
-                  <div>
-                    <h4 className="text-foreground mb-2 text-sm font-semibold">Outcome</h4>
-                    <p className="text-text-secondary leading-[1.7]">{system.outcomes}</p>
-                  </div>
-                </div>
-
-                {/* Sidebar */}
-                <div className="lg:border-border lg:border-l lg:pl-12">
-                  {/* Highlights */}
-                  <div className="mb-8">
-                    <h4 className="text-foreground mb-4 text-sm font-semibold">Key Capabilities</h4>
-                    <ul className="space-y-2">
-                      {system.highlights.map(h => (
-                        <li key={h} className="text-text-secondary flex items-start gap-2 text-sm">
-                          <Check className="text-success mt-0.5 h-4 w-4 shrink-0" />
-                          <span>{h}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Achievements */}
-                  <div>
-                    <h4 className="text-foreground mb-4 text-sm font-semibold">Business Impact</h4>
-                    <ul className="space-y-3">
-                      {system.achievements.map(a => (
-                        <li key={a} className="text-foreground flex items-start gap-2 text-sm">
-                          <ArrowRight className="text-text-muted mt-0.5 h-4 w-4 shrink-0" />
-                          <span>{a}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </article>
-            </Reveal>
+        {/* Project Cards */}
+        <div>
+          {projects.map((project, index) => (
+            <div key={project.id}>
+              {index > 0 && <hr className="border-border mt-14 mb-[40px]" />}
+              <ProjectCard project={project} delay={100} />
+            </div>
           ))}
         </div>
       </div>

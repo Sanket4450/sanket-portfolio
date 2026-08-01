@@ -1,15 +1,13 @@
-export type FeaturedSystem = {
+export type Project = {
   id: string
   title: string
-  positioning: string
-  summary: string
-  problem: string
-  responsibilities: string
-  architecture: string
-  highlights: string[]
-  challenges: string
-  outcomes: string
-  achievements: string[]
+  category: string
+  company?: string
+  type: 'professional' | 'personal'
+  overview: string
+  engineeringHighlights: string[]
+  outcomes: string[]
+  technologies: TechnologyGroup[]
 }
 
 export type TechnologyGroup = {

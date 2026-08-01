@@ -1,4 +1,4 @@
-import { Experience, FeaturedSystem, SkillGroup } from '@/types/index.type'
+import { Experience, Project, SkillGroup } from '@/types/index.type'
 
 export const personal = {
   name: 'Sanket Talaviya',
@@ -85,6 +85,14 @@ export const experienceSection = {
   title: 'Building scalable software that powers real businesses.',
   description:
     "I've built production systems for e-commerce, AI, IoT, healthcare, logistics, and content platforms, focusing on scalable architecture, intelligent automation, and reliable engineering.",
+}
+
+
+export const projectsSection = {
+  eyebrow: 'Projects',
+  title: 'Selected Engineering Work',
+  description:
+    'A selection of production systems that demonstrate my approach to building scalable software, solving complex engineering problems, and delivering measurable business impact.',
 }
 
 export const experiences: Experience[] = [
@@ -276,129 +284,203 @@ export const experiences: Experience[] = [
   },
 ]
 
-export const featuredSystems: FeaturedSystem[] = [
-  {
-    id: 'ai-outreach',
-    title: 'AI Outreach Platform',
-    positioning: 'AI-Powered Multi-Tenant Outreach Platform',
-    summary:
-      'A multi-tenant SaaS platform that enables teams to run AI-powered outreach campaigns with workspace isolation, conversation-centric architecture, and real-time engagement tracking.',
-    problem:
-      'Sales and outreach teams needed a scalable platform to manage multi-channel outreach campaigns with AI-generated messaging, but existing solutions lacked proper tenant isolation, conversation threading, and intelligent reply handling.',
-    responsibilities:
-      'Owned the full-stack architecture, designed the multi-tenant data model, built the AI integration pipeline, and implemented the real-time conversation system.',
-    architecture:
-      'Multi-tenant architecture with workspace-level database isolation, conversation-centric data model, thread-based messaging with AI reply parsing, and real-time engagement tracking via WebSockets.',
-    highlights: [
-      'Workspace-level tenant isolation',
-      'Conversation-centric data architecture',
-      'Thread-based messaging system',
-      'AI-powered content generation pipeline',
-      'Real-time engagement and reply tracking',
-      'Intelligent scheduling and follow-up automation',
-    ],
-    challenges:
-      'Building a true conversation-centric architecture that could handle complex threading across multiple channels while maintaining tenant isolation and supporting AI-generated content at scale.',
-    outcomes:
-      'Delivered a production-ready multi-tenant outreach platform with workspace isolation, AI-powered messaging, and real-time conversation management.',
-    achievements: [
-      'Designed and implemented workspace-level tenant isolation',
-      'Built conversation-centric architecture from scratch',
-      'Integrated AI content generation pipeline',
-      'Delivered full platform as primary full-stack engineer',
-    ],
-  },
+export const projects: Project[] = [
   {
     id: 'categra',
     title: 'Categra',
-    positioning: 'Multi-Channel Product Information Management Platform',
-    summary:
-      'A comprehensive PIM platform enabling businesses to manage product catalogs across multiple channels with validation, localization, marketplace synchronization, and AI-powered content generation.',
-    problem:
-      'E-commerce businesses struggled with managing product data across multiple marketplaces. Catalog synchronization to Amazon took 24+ hours, product validation was error-prone, and managing parent-child product relationships was complex.',
-    responsibilities:
-      'Owned the catalog synchronization system, product validation engine, marketplace integration layer, and AI content generation features.',
-    architecture:
-      'Event-driven architecture with a rule-based validation engine supporting tens of thousands of business rules, marketplace-specific data transformers, and a product merge system with recovery and rollback capabilities.',
-    highlights: [
-      'Amazon catalog synchronization',
-      'Product validation engine (10,000+ rules)',
-      'Parent-child relationship management',
-      'Multi-marketplace localization',
-      'AI-powered content generation',
-      'Product merge system with rollback',
+    category: 'Enterprise PIM Platform',
+    type: 'professional',
+    company: 'Transcodezy IT Solutions',
+
+    overview:
+      'Categra is an enterprise Product Information Management (PIM) platform that centralizes product data and synchronizes catalogs across Amazon marketplaces. The platform streamlines catalog management with marketplace-specific validation, localization, AI-assisted content generation, and synchronization workflows built for enterprise-scale commerce.',
+
+    engineeringHighlights: [
+      'Designed Amazon catalog synchronization workflows spanning products, variants, inventory, pricing, and orders across multiple marketplaces.',
+      'Built a rule-based validation engine that evaluates product data against Amazon product-type schemas containing tens of thousands of validation rules.',
+      'Engineered parent-child product relationships across marketplaces together with localization workflows for region-specific attributes and multilingual catalogs.',
+      'Developed AI-assisted product content generation and intelligent attribute recommendation workflows that reduced manual catalog preparation.',
+      'Implemented synchronization monitoring, retry handling, rollback, recovery, comparison, and change-tracking workflows to improve operational reliability.',
+      'Optimized synchronization architecture through batching, workflow redesign, and pipeline improvements, reducing processing time for enterprise catalog operations.',
     ],
-    challenges:
-      'Reducing Amazon catalog sync time from 24+ hours to under 3 hours required a fundamental redesign of the sync pipeline, including batched processing, delta detection, and marketplace-optimized data transformation.',
-    outcomes:
-      'Reduced sync time by 85%, built a validation engine supporting tens of thousands of rules, and successfully delivered live onboarding for multiple clients.',
-    achievements: [
-      'Reduced Amazon sync from 24+ hours to under 3 hours',
-      'Built validation engine supporting 10,000+ business rules',
-      'Designed product merge system with recovery workflows',
-      'Delivered successful live client onboarding',
+
+    outcomes: [
+      'Reduced Amazon catalog synchronization time from over 12 hours to under 2 hours.',
+      'Delivered a production-ready synchronization platform used during live enterprise customer onboarding.',
+      'Built a validation engine processing Amazon schemas containing tens of thousands of business rules.',
+      'Improved synchronization reliability through automated rollback, recovery, comparison, and retry workflows.',
+    ],
+
+    technologies: [
+      {
+        category: 'Backend',
+        items: ['NestJS', 'Node.js', 'TypeScript'],
+      },
+      {
+        category: 'Frontend',
+        items: ['Next.js'],
+      },
+      {
+        category: 'Data',
+        items: ['PostgreSQL', 'Sequelize', 'Redis', 'BullMQ'],
+      },
+      {
+        category: 'Cloud',
+        items: ['Amazon S3', 'Amazon SQS', 'Amazon EC2'],
+      },
+      {
+        category: 'AI',
+        items: ['Google Gemini', 'OpenAI API'],
+      },
+      {
+        category: 'Infrastructure',
+        items: ['Docker'],
+      },
     ],
   },
+
+  {
+    id: 'ai-outreach',
+    title: 'AI Outreach Platform',
+    category: 'AI-Powered Outreach SaaS',
+    type: 'personal',
+
+    overview:
+      'AI Outreach Platform is a multi-tenant SaaS application that helps teams manage personalized outreach through AI-assisted content generation, conversation-centric messaging, engagement tracking, scheduling, and intelligent follow-up automation. The platform is built around persistent conversation threads and workspace-level isolation for scalable team collaboration.',
+
+    engineeringHighlights: [
+      'Designed a conversation-centric architecture where every interaction is organized into persistent threads instead of isolated email events.',
+      'Implemented workspace-level tenant isolation with role-based access control for secure multi-tenant SaaS deployments.',
+      'Built AI-assisted content generation, rewriting, and follow-up workflows using modern LLM integrations.',
+      'Developed scheduling, engagement tracking, reply detection, and conversation management workflows for long-running outreach campaigns.',
+      'Designed a modular architecture for future expansion into founder intelligence, hiring signals, personalization, and opportunity discovery.',
+      'Built scalable backend workflows separating messaging, AI processing, scheduling, and user management into independent services.',
+    ],
+
+    outcomes: [
+      'Designed an extensible SaaS architecture supporting multiple organizations through isolated workspaces.',
+      'Integrated AI into production messaging workflows beyond standalone prompt-based features.',
+      'Established a reusable conversation model for scalable communication management.',
+      'Built an architectural foundation ready for future product expansion without major redesign.',
+    ],
+
+    technologies: [
+      {
+        category: 'Backend',
+        items: ['NestJS', 'Node.js', 'TypeScript'],
+      },
+      {
+        category: 'Frontend',
+        items: ['Next.js', 'React'],
+      },
+      {
+        category: 'Data',
+        items: ['PostgreSQL', 'Redis', 'BullMQ'],
+      },
+      {
+        category: 'AI',
+        items: ['OpenAI API'],
+      },
+      {
+        category: 'Infrastructure',
+        items: ['Docker'],
+      },
+    ],
+  },
+
   {
     id: 'cachetag',
     title: 'Cachetag',
-    positioning: 'Content Intelligence & Recommendation Platform',
-    summary:
-      'A content intelligence platform that ingests content from multiple sources, organizes it with AI, and delivers personalized content recommendations based on user engagement and behavior.',
-    problem:
-      'Content teams needed a way to aggregate content from disparate sources (Dropbox, RSS feeds), organize it intelligently, and surface relevant content to users based on their behavior patterns.',
-    responsibilities:
-      'Architected the content ingestion pipeline, built the recommendation engine, implemented the Dropbox and RSS integration, and optimized SEO performance.',
-    architecture:
-      'Modular ingestion architecture with Dropbox synchronization and RSS feed parsing, a content recommendation engine based on user engagement signals, and an SEO-optimized content delivery layer.',
-    highlights: [
-      'Dropbox content synchronization',
-      'RSS feed ingestion pipeline',
-      'Content recommendation engine',
-      'User engagement-based recommendations',
-      'SEO optimization',
-      'Scalable ingestion architecture',
+    category: 'Content Intelligence Platform',
+    type: 'professional',
+    company: 'Implies Solution',
+
+    overview:
+      'Cachetag is a content intelligence platform that aggregates, organizes, and personalizes content collected from multiple external sources. The platform combines automated ingestion pipelines, recommendation algorithms, and SEO-focused delivery to improve content discovery and long-term knowledge management.',
+
+    engineeringHighlights: [
+      'Architected Dropbox synchronization workflows for importing, matching, and maintaining externally managed resources alongside internal metadata.',
+      'Built scalable RSS ingestion pipelines for collecting, normalizing, and organizing content from numerous external publishers.',
+      'Designed a SQL-driven recommendation engine that personalized content using user engagement signals instead of static ranking rules.',
+      'Led the migration from React to Next.js, significantly improving maintainability, SEO, and Lighthouse performance.',
+      'Developed scalable content organization features including collections, favorites, reactions, sitemap generation, and resource management.',
+      'Owned the platform throughout its lifecycle, driving architecture, feature delivery, optimization, and long-term evolution.',
     ],
-    challenges:
-      'Building a recommendation engine that could process diverse content types and deliver personalized recommendations while maintaining high performance and SEO quality.',
-    outcomes:
-      'Delivered a scalable content intelligence platform with personalized recommendations, improved SEO performance, and efficient multi-source content ingestion.',
-    achievements: [
-      'Built scalable content ingestion pipeline',
-      'Implemented behavior-based recommendation engine',
-      'Achieved strong SEO performance metrics',
-      'Delivered personalized content recommendations',
+
+    outcomes: [
+      'Delivered a scalable multi-source content aggregation platform with continuous automated ingestion.',
+      'Delivered personalized recommendations using user engagement and behavioral signals.',
+      'Improved search visibility and Lighthouse performance beyond 95 through migration to Next.js.',
+      'Established an extensible architecture for future content sources and recommendation improvements.',
+    ],
+
+    technologies: [
+      {
+        category: 'Backend',
+        items: ['NestJS', 'Node.js', 'TypeScript'],
+      },
+      {
+        category: 'Frontend',
+        items: ['Next.js', 'React'],
+      },
+      {
+        category: 'Data',
+        items: ['PostgreSQL', 'Redis'],
+      },
+      {
+        category: 'Infrastructure',
+        items: ['Cron Jobs'],
+      },
     ],
   },
+
   {
     id: 'iotpot',
     title: 'IOTPOT',
-    positioning: 'Industrial IoT Platform',
-    summary:
-      'A multi-tenant Industrial IoT platform for real-time device telemetry processing, with MQTT communication, Redis Pub/Sub, WebSocket streaming, and role-based access control.',
-    problem:
-      'Industrial IoT deployments required a platform that could handle real-time telemetry from thousands of devices, maintain tenant-level data isolation, and provide live dashboards with RBAC.',
-    responsibilities:
-      'Designed the multi-tenant IoT architecture, implemented MQTT communication layer, built the Redis Pub/Sub and WebSocket real-time pipeline, and implemented RBAC.',
-    architecture:
-      'Tenant-isolated architecture with MQTT broker integration for device communication, Redis Pub/Sub for telemetry distribution, WebSocket streaming for real-time dashboards, and role-based access control for multi-user access.',
-    highlights: [
-      'Tenant-level data isolation',
-      'MQTT device communication',
-      'Redis Pub/Sub telemetry pipeline',
-      'WebSocket real-time streaming',
-      'Device telemetry processing',
-      'Role-based access control',
+    category: 'Industrial IoT Platform',
+    type: 'professional',
+    company: 'Implies Solution',
+
+    overview:
+      'IOTPOT is a multi-tenant Industrial IoT platform designed for secure telemetry processing, device communication, and real-time monitoring. The platform enables isolated tenant deployments while delivering live dashboards through MQTT messaging, Redis Pub/Sub, WebSocket streaming, and role-based access control.',
+
+    engineeringHighlights: [
+      'Implemented tenant-isolated architecture enabling secure data separation for independent customer deployments.',
+      'Built MQTT communication workflows for reliable real-time telemetry ingestion from connected devices.',
+      'Developed Redis Pub/Sub pipelines distributing telemetry events across backend services and real-time consumers.',
+      'Engineered WebSocket streaming infrastructure powering low-latency operational dashboards.',
+      'Implemented authentication, authorization, and role-based access control for secure multi-user IoT environments.',
+      'Built backend workflows for reliable telemetry processing while maintaining tenant isolation.',
     ],
-    challenges:
-      'Ensuring reliable real-time telemetry processing across thousands of devices while maintaining strict tenant data isolation and low-latency dashboard updates.',
-    outcomes:
-      'Delivered a production IoT platform with real-time telemetry processing, tenant isolation, and live dashboards with role-based access control.',
-    achievements: [
-      'Implemented MQTT-to-WebSocket real-time pipeline',
-      'Designed tenant-isolated multi-tenant architecture',
-      'Built RBAC system for multi-user IoT access',
-      'Delivered real-time telemetry dashboards',
+
+    outcomes: [
+      'Delivered a production-ready Industrial IoT platform supporting secure multi-tenant deployments.',
+      'Implemented reliable MQTT-to-WebSocket pipelines for real-time telemetry visualization.',
+      'Enabled secure enterprise deployments through tenant-isolated architecture.',
+      'Delivered low-latency device monitoring using distributed event-driven communication.',
+    ],
+
+    technologies: [
+      {
+        category: 'Backend',
+        items: ['NestJS', 'Node.js', 'TypeScript'],
+      },
+      {
+        category: 'Data',
+        items: ['PostgreSQL', 'Redis'],
+      },
+      {
+        category: 'Messaging',
+        items: ['MQTT'],
+      },
+      {
+        category: 'Realtime',
+        items: ['Redis Pub/Sub', 'WebSockets', 'Socket.IO'],
+      },
+      {
+        category: 'Infrastructure',
+        items: ['Docker'],
+      },
     ],
   },
 ]
@@ -413,7 +495,6 @@ export const engineeringInterests = [
   'Data Processing Pipelines',
   'Product Infrastructure',
 ]
-
 
 export const skillGroups: SkillGroup[] = [
   {
