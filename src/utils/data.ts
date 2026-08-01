@@ -56,6 +56,28 @@ export const navLinks = [
   { label: 'Contact', href: '#contact' },
 ]
 
+
+export const experienceSection = {
+  eyebrow: 'Experience',
+  title: 'Building scalable software that powers real businesses.',
+  description:
+    "I've built production systems for e-commerce, AI, IoT, healthcare, logistics, and content platforms, focusing on scalable architecture, intelligent automation, and reliable engineering.",
+}
+
+export const projectsSection = {
+  eyebrow: 'Projects',
+  title: 'Selected Engineering Work',
+  description:
+    'A selection of production systems that demonstrate my approach to building scalable software, solving complex engineering problems, and delivering measurable business impact.',
+}
+
+export const skillsSection = {
+  eyebrow: 'Skills',
+  title: 'Engineering Capabilities',
+  description:
+    'The technologies, architectural patterns, and engineering practices I use to build scalable production software.',
+}
+
 export const impact = [
   {
     label: 'Sync Time',
@@ -80,20 +102,6 @@ export const impact = [
   },
 ]
 
-export const experienceSection = {
-  eyebrow: 'Experience',
-  title: 'Building scalable software that powers real businesses.',
-  description:
-    "I've built production systems for e-commerce, AI, IoT, healthcare, logistics, and content platforms, focusing on scalable architecture, intelligent automation, and reliable engineering.",
-}
-
-
-export const projectsSection = {
-  eyebrow: 'Projects',
-  title: 'Selected Engineering Work',
-  description:
-    'A selection of production systems that demonstrate my approach to building scalable software, solving complex engineering problems, and delivering measurable business impact.',
-}
 
 export const experiences: Experience[] = [
   {
@@ -206,7 +214,7 @@ export const experiences: Experience[] = [
       },
       {
         category: 'Realtime',
-        items: ['WebSockets', 'Redis Pub/Sub', 'Socket.IO'],
+        items: ['WebSockets', 'Pub/Sub', 'Socket.IO'],
       },
       {
         category: 'Infrastructure',
@@ -475,7 +483,7 @@ export const projects: Project[] = [
       },
       {
         category: 'Realtime',
-        items: ['Redis Pub/Sub', 'WebSockets', 'Socket.IO'],
+        items: ['Pub/Sub', 'WebSockets', 'Socket.IO'],
       },
       {
         category: 'Infrastructure',
@@ -496,26 +504,63 @@ export const engineeringInterests = [
   'Product Infrastructure',
 ]
 
+
 export const skillGroups: SkillGroup[] = [
   {
-    category: 'Backend',
-    skills: ['Node.js', 'TypeScript', 'NestJS', 'GraphQL', 'REST APIs', 'Microservices'],
+    category: 'Backend Engineering',
+    skills: [
+      'Node.js',
+      'NestJS',
+      'Express.js',
+      'TypeScript',
+      'GraphQL',
+      'REST APIs',
+      'Microservices',
+    ],
   },
   {
-    category: 'Frontend',
-    skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+    category: 'Frontend Engineering',
+    skills: ['React', 'Next.js', 'Zustand', 'Redux', 'Tailwind CSS', 'shadcn/ui'],
   },
   {
-    category: 'Database',
-    skills: ['PostgreSQL', 'MongoDB', 'Redis', 'Prisma', 'Drizzle'],
+    category: 'Data & Storage',
+    skills: ['PostgreSQL', 'MongoDB', 'Redis', 'BullMQ', 'Prisma ORM', 'Sequelize', 'TypeORM'],
   },
   {
-    category: 'Cloud',
-    skills: ['AWS', 'Docker', 'CI/CD', 'Nginx'],
+    category: 'Cloud & Infrastructure',
+    skills: ['Docker', 'Amazon S3', 'Amazon SQS', 'Amazon EC2', 'GitHub', 'GitLab'],
   },
   {
-    category: 'AI',
-    skills: ['OpenAI', 'Ollama', 'AI Workflow Integration'],
+    category: 'AI Engineering',
+    skills: ['OpenAI API', 'Google Gemini', 'Ollama', 'AI Workflows', 'Prompt Engineering'],
+  },
+  {
+    category: 'Distributed Systems',
+    skills: ['MQTT', 'WebSockets', 'Pub/Sub', 'Event-driven Architecture', 'Background Jobs'],
+  },
+  {
+    category: 'Software Architecture',
+    skills: [
+      'Systems Design',
+      'Software Architecture',
+      'Multi-tenant SaaS',
+      'RBAC',
+      'User Authentication',
+      'Data Synchronization',
+    ],
+  },
+  {
+    category: 'Domain Expertise',
+    skills: [
+      'Amazon Marketplace',
+      'PIM Systems',
+      'Multi-Channel Commerce',
+      'E-Commerce',
+      'Content Management',
+      'IoT',
+      'Healthcare',
+      'Logistics',
+    ],
   },
 ]
 
