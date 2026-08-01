@@ -35,8 +35,10 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled ? 'bg-background/80 border-border border-b backdrop-blur-lg' : 'bg-transparent'
+      className={`fixed inset-x-0 top-0 z-50 border-b ${
+        scrolled
+          ? 'bg-background/80 border-border backdrop-blur-lg'
+          : 'border-transparent bg-transparent'
       }`}
     >
       <div className="section-container flex h-16 items-center justify-between">
