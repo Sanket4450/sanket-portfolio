@@ -10,7 +10,7 @@ function ProjectAttribution({ project }: { project: Project }) {
   const label = project.type === 'professional' ? 'Professional Project' : 'Personal Project'
 
   return (
-    <p className="text-text-muted text-sm leading-relaxed">
+    <p className="text-text-metadata text-[14px] leading-[1.6]">
       {label}
       {project.company && (
         <>
@@ -48,10 +48,10 @@ function ProjectAttribution({ project }: { project: Project }) {
 
 function TechnologyStack({ groups }: { groups: TechnologyGroup[] }) {
   return (
-    <div className="flex flex-col gap-y-4">
+    <div className="flex flex-col gap-y-5">
       {groups.map(group => (
         <div key={group.category}>
-          <p className="text-text-muted mb-3 text-[11px] font-medium tracking-widest uppercase">
+          <p className="text-text-metadata mb-2 text-[11px] font-medium tracking-widest uppercase">
             {group.category}
           </p>
           <div className="flex flex-wrap gap-1.5">
@@ -84,8 +84,8 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
     <article>
       <Reveal delay={delay}>
         {/* ── Header ────────────────────────────────────────── */}
-        <div className="mb-[32px]">
-          <p className="text-text-muted mb-3 text-[11px] font-medium tracking-widest uppercase">
+        <div className="mb-10">
+          <p className="text-text-metadata mb-3 text-[11px] font-medium tracking-widest uppercase">
             {project.category}
           </p>
           <h3 className="text-foreground mb-1 text-2xl font-bold tracking-[-0.02em]">
@@ -95,12 +95,12 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
         </div>
       </Reveal>
 
-      <div className="grid grid-cols-1 gap-x-14 gap-y-10 lg:grid-cols-[1fr_400px]">
+      <div className="grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-[1fr_400px]">
         {/* ── Left: Narrative + Engineering Depth ───────────── */}
         <div>
           {/* Overview */}
           <Reveal delay={delay + 50}>
-            <p className="text-text-secondary mb-[40px] max-w-[560px] text-[15px] leading-[1.75]">
+            <p className="text-text-body mb-10 max-w-[560px] text-[15px] leading-[1.75]">
               {project.overview}
             </p>
           </Reveal>
@@ -146,7 +146,7 @@ export default function Projects() {
       <div className="section-container">
         {/* Section Header */}
         <Reveal>
-          <p className="text-text-muted mb-3 text-sm font-medium tracking-widest uppercase">
+          <p className="text-text-muted mb-3 text-[14px] font-medium tracking-[0.16em] uppercase">
             {projectsSection.eyebrow}
           </p>
         </Reveal>
@@ -158,7 +158,7 @@ export default function Projects() {
         </Reveal>
 
         <Reveal delay={100}>
-          <p className="text-text-secondary mb-16 max-w-[700px] text-[15px] leading-[1.75]">
+          <p className="text-text-body mb-16 max-w-[700px] text-[15px] leading-[1.75]">
             {projectsSection.description}
           </p>
         </Reveal>

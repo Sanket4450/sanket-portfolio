@@ -15,7 +15,7 @@ export default function About() {
       <div className="section-container">
         {/* Section Header */}
         <Reveal delay={0}>
-          <p className="text-text-muted mb-3 text-sm font-medium tracking-widest uppercase">
+          <p className="text-text-muted mb-3 text-[14px] font-medium tracking-[0.16em] uppercase">
             {aboutSection.eyebrow}
           </p>
         </Reveal>
@@ -28,9 +28,9 @@ export default function About() {
 
         {/* Narrative */}
         <Reveal delay={100}>
-          <div className="max-w-[680px] space-y-[22px]">
+          <div className="max-w-[680px] space-y-10">
             {aboutSection.paragraphs.map((paragraph, index) => (
-              <p key={index} className="text-text-secondary text-[15px] leading-[1.75]">
+              <p key={index} className="text-text-body text-[15px] leading-[1.75]">
                 {paragraph}
               </p>
             ))}
@@ -38,7 +38,7 @@ export default function About() {
         </Reveal>
 
         {/* Engineering Principles Grid */}
-        <div className="mt-[56px] grid gap-x-[48px] gap-y-[40px] sm:grid-cols-2">
+        <div className="mt-10 grid gap-x-12 gap-y-10 sm:grid-cols-2">
           {engineeringPrinciples.map((principle, index) => {
             const rowIndex = Math.floor(index / 2)
             const delay = 220 + rowIndex * 80
@@ -49,7 +49,7 @@ export default function About() {
                   <h3 className="text-foreground mb-2 text-base font-semibold">
                     {principle.title}
                   </h3>
-                  <p className="text-text-secondary text-[15px] leading-[1.75]">
+                  <p className="text-text-body text-[15px] leading-[1.75]">
                     {principle.description}
                   </p>
                 </div>

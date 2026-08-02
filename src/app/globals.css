@@ -13,6 +13,8 @@
   --color-text-primary: #FAFAFA;
   --color-text-secondary: #A9A9B1;
   --color-text-muted: #8A8A91;
+  --color-text-body: #B8B8C0;
+  --color-text-metadata: #94949C;
 
   /* Borders */
   --color-border: rgba(255, 255, 255, 0.10);
@@ -132,21 +134,21 @@ hr {
 }
 
 .section-padding {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 112px;
+  padding-bottom: 112px;
 }
 
 @media (max-width: 1024px) {
   .section-padding {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 96px;
+    padding-bottom: 96px;
   }
 }
 
 @media (max-width: 640px) {
   .section-padding {
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
   .section-container {

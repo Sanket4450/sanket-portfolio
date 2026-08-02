@@ -9,7 +9,7 @@ export default function Skills() {
       <div className="section-container">
         {/* Section Header */}
         <Reveal>
-          <p className="text-text-muted mb-3 text-sm font-medium tracking-widest uppercase">
+          <p className="text-text-muted mb-3 text-[14px] font-medium tracking-[0.16em] uppercase">
             {skillsSection.eyebrow}
           </p>
         </Reveal>
@@ -21,7 +21,7 @@ export default function Skills() {
         </Reveal>
 
         <Reveal delay={100}>
-          <p className="text-text-secondary mb-16 max-w-[700px] text-[15px] leading-[1.75]">
+          <p className="text-text-body mb-16 max-w-[700px] text-[15px] leading-[1.75]">
             {skillsSection.description}
           </p>
         </Reveal>
@@ -31,7 +31,7 @@ export default function Skills() {
           {skillGroups.map((group, i) => (
             <Reveal key={group.category} delay={150 + i * 60}>
               <div>
-                <h3 className="text-text-muted mb-4 text-[11px] font-medium tracking-widest uppercase">
+                <h3 className="text-text-metadata mb-2 text-[11px] font-medium tracking-widest uppercase">
                   {group.category}
                 </h3>
                 <div className="flex flex-wrap gap-1.5">

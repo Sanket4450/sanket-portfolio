@@ -5,10 +5,10 @@ export default function Footer() {
     <footer className="bg-primary-surface border-border border-t">
       <div className="section-container py-8">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <p className="text-text-muted text-sm">
+          <p className="text-text-metadata text-[14px] leading-[1.6]">
             &copy; {new Date().getFullYear()} {personal.name}
           </p>
-          <div className="text-text-secondary flex items-center text-sm">
+          <div className="text-text-metadata flex items-center text-[14px] leading-[1.6]">
             {footer.tagline.map((item, index) => (
               <span key={item} className="flex items-center">
                 {index > 0 && <span className="text-text-muted mx-2">•</span>}

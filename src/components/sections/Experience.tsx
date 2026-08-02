@@ -45,27 +45,27 @@ function CompanyCard({ company, index }: { company: ExperienceType; index: numbe
             {company.company}
           </h3>
           <p className="text-text-secondary mb-0.5 text-base font-medium">{company.role}</p>
-          <p className="text-text-muted text-[14px]">
+          <p className="text-text-metadata text-[14px] leading-[1.6]">
             {dateRange} · {totalDuration}
           </p>
         </div>
 
         {/* Company Summary */}
-        <p className="text-text-secondary mb-[40px] max-w-[620px] text-[15px] leading-[1.75]">
+        <p className="text-text-body mb-10 max-w-[620px] text-[15px] leading-[1.75]">
           {company.summary}
         </p>
       </Reveal>
 
       {/* Projects */}
       {company.projects.length > 0 && (
-        <div className="mb-[40px]">
+        <div className="mb-10">
           <Reveal delay={index * 100 + 100}>
             <SectionLabel>Projects</SectionLabel>
             <div className="space-y-4">
               {company.projects.map(project => (
                 <div key={project.name} className="border-border rounded-xl border px-5 py-4">
                   <h4 className="text-foreground mb-1.5 text-base font-semibold">{project.name}</h4>
-                  <p className="text-text-secondary max-w-[600px] text-[15px] leading-[1.75]">
+                  <p className="text-text-body max-w-[600px] text-[15px] leading-[1.75]">
                     {project.description}
                   </p>
                 </div>
@@ -76,7 +76,7 @@ function CompanyCard({ company, index }: { company: ExperienceType; index: numbe
       )}
 
       {/* Highlights */}
-      <div className="mb-[40px]">
+      <div className="mb-10">
         <Reveal delay={index * 100 + 150}>
           <SectionLabel>Highlights</SectionLabel>
         </Reveal>
@@ -91,7 +91,7 @@ function CompanyCard({ company, index }: { company: ExperienceType; index: numbe
         <div className="flex flex-wrap gap-x-8 gap-y-5">
           {company.technologies.map(group => (
             <div key={group.category}>
-              <p className="text-text-muted mb-2 text-[11px] font-medium tracking-widest uppercase">
+              <p className="text-text-metadata mb-2 text-[11px] font-medium tracking-widest uppercase">
                 {group.category}
               </p>
               <div className="flex flex-wrap gap-1.5">
@@ -130,7 +130,7 @@ export default function Experience() {
       <div className="section-container">
         {/* Section Header */}
         <Reveal>
-          <p className="text-text-muted mb-3 text-sm font-medium tracking-widest uppercase">
+          <p className="text-text-muted mb-3 text-[14px] font-medium tracking-[0.16em] uppercase">
             {experienceSection.eyebrow}
           </p>
         </Reveal>
@@ -142,7 +142,7 @@ export default function Experience() {
         </Reveal>
 
         <Reveal delay={100}>
-          <p className="text-text-secondary mb-16 max-w-[700px] text-[15px] leading-[1.75]">
+          <p className="text-text-body mb-16 max-w-[700px] text-[15px] leading-[1.75]">
             {experienceSection.description}
           </p>
         </Reveal>

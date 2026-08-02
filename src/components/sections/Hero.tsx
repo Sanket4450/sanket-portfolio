@@ -30,7 +30,7 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={200}>
-            <p className="text-text-muted mb-10 max-w-[600px] text-[15px] leading-[1.75]">
+            <p className="text-text-body mb-10 max-w-[640px] text-[15px] leading-[1.75]">
               {personal.supporting}
             </p>
           </Reveal>
