@@ -47,7 +47,7 @@ export default function Contact() {
           <div className="flex flex-wrap items-center justify-center gap-3">
             <a
               href={`mailto:${personal.email}`}
-              className="bg-foreground text-background hover:bg-accent-hover inline-flex h-12 items-center gap-2 rounded-lg px-6 text-sm font-medium transition-colors duration-200"
+              className="bg-text-primary text-background hover:bg-accent-hover inline-flex h-12 items-center gap-2 rounded-[10px] px-6 text-[14px] font-medium"
               style={{ boxShadow: '0 1px 2px rgba(0,0,0,.35)' }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.boxShadow = '0 3px 12px rgba(0,0,0,.45)'
@@ -64,7 +64,17 @@ export default function Contact() {
               href={personal.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="border-border text-text-secondary hover:text-foreground hover:border-border-hover inline-flex h-12 items-center gap-2 rounded-lg border px-6 text-sm font-medium transition-colors duration-200"
+              className="border-border text-text-secondary inline-flex h-12 items-center gap-2 rounded-[10px] border px-6 text-[14px] font-medium"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(255,255,255,.03)';
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,.25)';
+                e.currentTarget.style.color = '#FAFAFA';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '';
+                e.currentTarget.style.borderColor = '';
+                e.currentTarget.style.color = '';
+              }}
             >
               <LinkedInIcon className="h-4 w-4" />
               LinkedIn
@@ -74,7 +84,17 @@ export default function Contact() {
               href={personal.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="border-border text-text-secondary hover:text-foreground hover:border-border-hover inline-flex h-12 items-center gap-2 rounded-lg border px-6 text-sm font-medium transition-colors duration-200"
+              className="border-border text-text-secondary inline-flex h-12 items-center gap-2 rounded-[10px] border px-6 text-[14px] font-medium"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(255,255,255,.03)';
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,.25)';
+                e.currentTarget.style.color = '#FAFAFA';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '';
+                e.currentTarget.style.borderColor = '';
+                e.currentTarget.style.color = '';
+              }}
             >
               <GitHubIcon className="h-4 w-4" />
               GitHub
@@ -84,7 +104,17 @@ export default function Contact() {
               href={personal.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="border-border text-text-secondary hover:text-foreground hover:border-border-hover inline-flex h-12 items-center gap-2 rounded-lg border px-6 text-sm font-medium transition-colors duration-200"
+              className="border-border text-text-secondary inline-flex h-12 items-center gap-2 rounded-[10px] border px-6 text-[14px] font-medium"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(255,255,255,.03)';
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,.25)';
+                e.currentTarget.style.color = '#FAFAFA';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '';
+                e.currentTarget.style.borderColor = '';
+                e.currentTarget.style.color = '';
+              }}
             >
               <FileText className="h-4 w-4" />
               Resume

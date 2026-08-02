@@ -41,7 +41,7 @@ export default function Hero() {
                 href={personal.resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-text-primary text-background hover:bg-accent-hover inline-flex h-11 items-center gap-2 rounded-lg px-6 text-sm font-medium transition-colors duration-200"
+                className="bg-text-primary text-background hover:bg-accent-hover inline-flex h-12 items-center gap-2 rounded-[10px] px-6 text-[14px] font-medium"
                 style={{ boxShadow: '0 1px 2px rgba(0,0,0,.35)' }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.boxShadow = '0 3px 12px rgba(0,0,0,.45)'
@@ -55,7 +55,17 @@ export default function Hero() {
               </a>
               <a
                 href={`mailto:${personal.email}`}
-                className="border-border text-text-secondary hover:text-text-primary hover:border-border-hover inline-flex h-11 items-center gap-2 rounded-lg border px-5 text-sm font-medium transition-colors duration-200"
+                className="border-border text-text-secondary inline-flex h-12 items-center gap-2 rounded-[10px] border px-6 text-[14px] font-medium"
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(255,255,255,.03)';
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,.25)';
+                  e.currentTarget.style.color = '#FAFAFA';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '';
+                  e.currentTarget.style.borderColor = '';
+                  e.currentTarget.style.color = '';
+                }}
               >
                 <Mail className="h-4 w-4" />
                 Contact
@@ -64,7 +74,17 @@ export default function Hero() {
                 href={personal.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-border text-text-secondary hover:text-text-primary hover:border-border-hover inline-flex h-11 items-center gap-2 rounded-lg border px-5 text-sm font-medium transition-colors duration-200"
+                className="border-border text-text-secondary inline-flex h-12 items-center gap-2 rounded-[10px] border px-6 text-[14px] font-medium"
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(255,255,255,.03)';
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,.25)';
+                  e.currentTarget.style.color = '#FAFAFA';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '';
+                  e.currentTarget.style.borderColor = '';
+                  e.currentTarget.style.color = '';
+                }}
               >
                 <LinkedInIcon className="h-4 w-4" />
                 LinkedIn
@@ -73,7 +93,17 @@ export default function Hero() {
                 href={personal.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-border text-text-secondary hover:text-text-primary hover:border-border-hover inline-flex h-11 items-center gap-2 rounded-lg border px-5 text-sm font-medium transition-colors duration-200"
+                className="border-border text-text-secondary inline-flex h-12 items-center gap-2 rounded-[10px] border px-6 text-[14px] font-medium"
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(255,255,255,.03)';
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,.25)';
+                  e.currentTarget.style.color = '#FAFAFA';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '';
+                  e.currentTarget.style.borderColor = '';
+                  e.currentTarget.style.color = '';
+                }}
               >
                 <GitHubIcon className="h-4 w-4" />
                 GitHub
@@ -88,10 +118,10 @@ export default function Hero() {
         <Reveal delay={600}>
           <a
             href="#about"
-            className="text-text-muted hover:text-text-secondary flex flex-col items-center gap-2 transition-colors duration-200"
+            className="text-text-muted hover:text-text-secondary flex flex-col items-center gap-2"
           >
             <span className="text-xs tracking-widest uppercase">Scroll</span>
-            <ArrowDown className="h-4 w-4 animate-pulse" />
+            <ArrowDown className="h-4 w-4" />
           </a>
         </Reveal>
       </div>

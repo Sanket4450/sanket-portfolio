@@ -1,3 +1,5 @@
+'use client'
+
 import { projects, projectsSection } from '@/utils/data'
 import Reveal from '@/components/Reveal'
 import SectionLabel from '@/components/SectionLabel'
@@ -23,7 +25,7 @@ function ProjectAttribution({ project }: { project: Project }) {
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-secondary hover:text-foreground inline-flex items-center gap-1 text-xs transition-colors"
+              className="text-text-secondary hover:text-text-primary inline-flex items-center gap-1 text-xs"
             >
               Live ↗
             </a>
@@ -33,7 +35,7 @@ function ProjectAttribution({ project }: { project: Project }) {
               href={project.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-secondary hover:text-foreground inline-flex items-center gap-1 text-xs transition-colors"
+              className="text-text-secondary hover:text-text-primary inline-flex items-center gap-1 text-xs"
             >
               Repo ↗
             </a>
@@ -56,7 +58,16 @@ function TechnologyStack({ groups }: { groups: TechnologyGroup[] }) {
             {group.items.map(tech => (
               <span
                 key={tech}
-                className="bg-surface border-border text-text-muted inline-block rounded-md border px-2.5 py-1 text-xs"
+                className="border-border text-text-muted inline-block cursor-default rounded-[8px] border px-[10px] py-[4px] text-[12px] font-medium"
+                style={{ backgroundColor: 'rgba(255,255,255,.025)' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(255,255,255,.045)';
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,.25)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(255,255,255,.025)';
+                  e.currentTarget.style.borderColor = '';
+                }}
               >
                 {tech}
               </span>

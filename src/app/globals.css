@@ -82,6 +82,26 @@ body {
   outline-offset: 2px;
 }
 
+/* Global interaction transition – applied everywhere consistently */
+a,
+button,
+[role='button'],
+.interactive {
+  transition:
+    background-color 200ms ease-out,
+    border-color 200ms ease-out,
+    color 200ms ease-out,
+    box-shadow 200ms ease-out,
+    opacity 200ms ease-out;
+}
+
+/* Cursor defaults */
+button,
+a[href],
+[role='button'] {
+  cursor: pointer;
+}
+
 /* Divider – all <hr> elements */
 hr {
   border-color: rgba(255, 255, 255, 0.08);

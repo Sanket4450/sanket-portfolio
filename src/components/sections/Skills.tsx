@@ -1,3 +1,5 @@
+'use client'
+
 import { skillGroups, skillsSection } from '@/utils/data'
 import Reveal from '@/components/Reveal'
 
@@ -36,7 +38,16 @@ export default function Skills() {
                   {group.skills.map(skill => (
                     <span
                       key={skill}
-                      className="bg-surface border-border text-text-muted inline-block rounded-md border px-2.5 py-1 text-xs"
+                      className="border-border text-text-muted inline-block cursor-default rounded-[8px] border px-[10px] py-[4px] text-[12px] font-medium"
+                      style={{ backgroundColor: 'rgba(255,255,255,.025)' }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = 'rgba(255,255,255,.045)';
+                        e.currentTarget.style.borderColor = 'rgba(255,255,255,.25)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = 'rgba(255,255,255,.025)';
+                        e.currentTarget.style.borderColor = '';
+                      }}
                     >
                       {skill}
                     </span>
