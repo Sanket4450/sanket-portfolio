@@ -9,7 +9,7 @@ export default function About() {
       <div className="section-container">
         {/* Section Header */}
         <Reveal delay={0}>
-          <p className="text-text-muted mb-3 text-[11px] font-medium tracking-widest uppercase">
+          <p className="text-text-muted mb-3 text-sm font-medium tracking-widest uppercase">
             {aboutSection.eyebrow}
           </p>
         </Reveal>

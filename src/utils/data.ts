@@ -126,7 +126,8 @@ export const experiences: Experience[] = [
   {
     company: 'Transcodezy IT Solutions',
     role: 'Full Stack Developer',
-    duration: 'Jul 2025 — Present',
+    startDate: { month: 7, year: 2025 },
+    endDate: null,
     summary:
       'Building enterprise Product Information Management (PIM) systems that synchronize large-scale product catalogs across Amazon marketplaces using automation, AI-assisted workflows, and distributed synchronization pipelines.',
 
@@ -178,7 +179,8 @@ export const experiences: Experience[] = [
   {
     company: 'Implies Solution',
     role: 'Full Stack Developer',
-    duration: 'Jun 2024 — Jul 2025',
+    startDate: { month: 6, year: 2024 },
+    endDate: { month: 7, year: 2025 },
     summary:
       'Designed and developed SaaS products across content management, IoT, logistics, and healthcare, contributing to system architecture, backend engineering, and end-to-end product delivery.',
 
@@ -253,7 +255,8 @@ export const experiences: Experience[] = [
   {
     company: 'Object Infotech',
     role: 'MERN Stack Developer',
-    duration: 'Jan 2023 — Jun 2024',
+    startDate: { month: 1, year: 2023 },
+    endDate: { month: 6, year: 2024 },
     summary:
       'Progressed from Backend Developer Trainee to MERN Stack Developer while building production web applications across e-commerce, content management, and commerce platforms, establishing strong backend engineering foundations and full-stack development expertise.',
 

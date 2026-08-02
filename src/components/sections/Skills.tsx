@@ -13,7 +13,7 @@ export default function Skills() {
         </Reveal>
 
         <Reveal delay={50}>
-          <h2 className="text-foreground mb-3 text-[32px] leading-[1.15] font-bold tracking-[-0.02em] sm:text-[36px]">
+          <h2 className="text-foreground mb-4 text-[32px] leading-[1.15] font-bold tracking-[-0.02em] sm:text-[36px]">
             {skillsSection.title}
           </h2>
         </Reveal>

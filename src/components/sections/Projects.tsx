@@ -1,14 +1,8 @@
 import { projects, projectsSection } from '@/utils/data'
 import Reveal from '@/components/Reveal'
+import SectionLabel from '@/components/SectionLabel'
+import BulletList from '@/components/BulletList'
 import type { Project, TechnologyGroup } from '@/types/index.type'
-
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="text-text-muted mb-4 text-[11px] font-medium tracking-widest uppercase">
-      {children}
-    </p>
-  )
-}
 
 function ProjectAttribution({ project }: { project: Project }) {
   const label = project.type === 'professional' ? 'Professional Project' : 'Personal Project'
@@ -50,19 +44,6 @@ function ProjectAttribution({ project }: { project: Project }) {
   )
 }
 
-function EngineeringHighlights({ items }: { items: string[] }) {
-  return (
-    <ul className="space-y-3">
-      {items.map(item => (
-        <li key={item} className="text-text-secondary flex gap-3 text-[15px] leading-relaxed">
-          <span className="text-text-muted mt-[0.35em] shrink-0 text-[10px] select-none">▸</span>
-          <span className="max-w-[620px]">{item}</span>
-        </li>
-      ))}
-    </ul>
-  )
-}
-
 function TechnologyStack({ groups }: { groups: TechnologyGroup[] }) {
   return (
     <div className="flex flex-col gap-y-4">
@@ -84,19 +65,6 @@ function TechnologyStack({ groups }: { groups: TechnologyGroup[] }) {
         </div>
       ))}
     </div>
-  )
-}
-
-function Outcomes({ items }: { items: string[] }) {
-  return (
-    <ul className="space-y-3">
-      {items.map(item => (
-        <li key={item} className="text-text-secondary flex gap-3 text-[15px] leading-relaxed">
-          <span className="text-text-muted mt-[0.35em] shrink-0 text-[10px] select-none">▸</span>
-          <span className="max-w-[620px]">{item}</span>
-        </li>
-      ))}
-    </ul>
   )
 }
 
@@ -131,7 +99,7 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
             <SectionLabel>Engineering Highlights</SectionLabel>
           </Reveal>
           <Reveal delay={delay + 150}>
-            <EngineeringHighlights items={project.engineeringHighlights} />
+            <BulletList items={project.engineeringHighlights} />
           </Reveal>
         </div>
 
@@ -147,7 +115,7 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
           <Reveal delay={delay + 250}>
             <hr className="border-border my-6" />
             <SectionLabel>Outcomes</SectionLabel>
-            <Outcomes items={project.outcomes} />
+            <BulletList items={project.outcomes} />
           </Reveal>
         </div>
       </div>
@@ -182,7 +150,7 @@ export default function Projects() {
         <div>
           {projects.map((project, index) => (
             <div key={project.id}>
-              {index > 0 && <hr className="border-border mt-14 mb-[40px]" />}
+              {index > 0 && <hr className="border-border my-12" />}
               <ProjectCard project={project} delay={100} />
             </div>
           ))}

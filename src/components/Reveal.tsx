@@ -12,8 +12,26 @@ type Props = {
 export default function Reveal({ children, delay = 0, className = "", as: Tag = "div" }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReducedMotion(mq.matches);
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setReducedMotion(e.matches);
+    };
+
+    mq.addEventListener("change", handleChange);
+    return () => mq.removeEventListener("change", handleChange);
+  }, []);
+
+  useEffect(() => {
+    if (reducedMotion) {
+      setVisible(true);
+      return;
+    }
+
     const el = ref.current;
     if (!el) return;
 
@@ -29,17 +47,14 @@ export default function Reveal({ children, delay = 0, className = "", as: Tag = 
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
+  }, [reducedMotion]);
 
   return (
     <Tag
       ref={ref}
-      className={`${className} ${visible ? "visible" : ""}`}
+      className={`reveal ${visible ? "visible" : ""} ${className}`}
       style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(24px)",
-        transition: `opacity 300ms ease-out, transform 300ms ease-out`,
-        transitionDelay: `${delay}ms`,
+        ...(delay > 0 ? { "--reveal-delay": `${delay}ms` } as React.CSSProperties : {}),
       }}
     >
       {children}

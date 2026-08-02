@@ -2,11 +2,21 @@
 
 import { experiences, experienceSection } from '@/utils/data'
 import Reveal from '@/components/Reveal'
+import SectionLabel from '@/components/SectionLabel'
+import BulletList from '@/components/BulletList'
 import type { Experience as ExperienceType } from '@/types/index.type'
 
-function computeDuration(duration: string): string {
-  const months = parseRange(duration)
-  if (months === null) return ''
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+function formatDateRange(startDate: { month: number; year: number }, endDate: { month: number; year: number } | null): string {
+  const start = `${MONTHS[startDate.month - 1]} ${startDate.year}`
+  const end = endDate ? `${MONTHS[endDate.month - 1]} ${endDate.year}` : 'Present'
+  return `${start} — ${end}`
+}
+
+function computeDuration(startDate: { month: number; year: number }, endDate: { month: number; year: number } | null): string {
+  const end = endDate ?? { month: new Date().getMonth() + 1, year: new Date().getFullYear() }
+  const months = (end.year - startDate.year) * 12 + (end.month - startDate.month) + 1
 
   const years = Math.floor(months / 12)
   const remainder = months % 12
@@ -22,55 +32,9 @@ function computeDuration(duration: string): string {
   return `${years} ${years === 1 ? 'yr' : 'yrs'} ${remainder} ${remainder === 1 ? 'mo' : 'mos'}`
 }
 
-function parseRange(duration: string): number | null {
-  const match = duration.match(
-    /([A-Z][a-z]{2})\s(\d{4})\s[—–-]\s(?:Present|([A-Z][a-z]{2})\s(\d{4}))/,
-  )
-  if (!match) return null
-
-  const startMonth = monthIndex(match[1])
-  const startYear = parseInt(match[2], 10)
-
-  if (match[0].endsWith('Present')) {
-    const now = new Date()
-    const endMonth = now.getMonth()
-    const endYear = now.getFullYear()
-    return (endYear - startYear) * 12 + (endMonth - startMonth) + 1
-  }
-
-  const endMonth = monthIndex(match[3])
-  const endYear = parseInt(match[4], 10)
-  return (endYear - startYear) * 12 + (endMonth - startMonth) + 1
-}
-
-function monthIndex(abbr: string): number {
-  const months = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ]
-  return months.indexOf(abbr)
-}
-
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="text-text-muted mb-4 text-[11px] font-medium tracking-widest uppercase">
-      {children}
-    </p>
-  )
-}
-
 function CompanyCard({ company, index }: { company: ExperienceType; index: number }) {
-  const totalDuration = computeDuration(company.duration)
+  const dateRange = formatDateRange(company.startDate, company.endDate)
+  const totalDuration = computeDuration(company.startDate, company.endDate)
 
   return (
     <article className="group">
@@ -82,8 +46,7 @@ function CompanyCard({ company, index }: { company: ExperienceType; index: numbe
           </h3>
           <p className="text-text-secondary mb-0.5 text-base font-medium">{company.role}</p>
           <p className="text-text-muted text-sm">
-            {company.duration}
-            {totalDuration && ` · ${totalDuration}`}
+            {dateRange} · {totalDuration}
           </p>
         </div>
 
@@ -117,18 +80,9 @@ function CompanyCard({ company, index }: { company: ExperienceType; index: numbe
         <Reveal delay={index * 100 + 150}>
           <SectionLabel>Highlights</SectionLabel>
         </Reveal>
-        <ul className="space-y-3">
-          {company.highlights.map((highlight, hi) => (
-            <Reveal key={hi} delay={index * 100 + 200 + hi * 40}>
-              <li className="text-text-secondary flex gap-3 text-[15px] leading-relaxed">
-                <span className="text-text-muted mt-[0.35em] shrink-0 text-[10px] select-none">
-                  ▸
-                </span>
-                <span className="max-w-[620px]">{highlight}</span>
-              </li>
-            </Reveal>
-          ))}
-        </ul>
+        <Reveal delay={index * 100 + 200}>
+          <BulletList items={company.highlights} />
+        </Reveal>
       </div>
 
       {/* Technology Groups */}
@@ -185,7 +139,7 @@ export default function Experience() {
         <div>
           {experiences.map((company, index) => (
             <div key={company.company}>
-              {index > 0 && <hr className="border-border mt-14 mb-[40px]" />}
+              {index > 0 && <hr className="border-border my-12" />}
               <CompanyCard company={company} index={index} />
             </div>
           ))}

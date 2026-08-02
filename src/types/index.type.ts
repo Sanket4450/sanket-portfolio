@@ -25,7 +25,8 @@ export type ExperienceProject = {
 export type Experience = {
   company: string
   role: string
-  duration: string
+  startDate: { month: number; year: number }
+  endDate: { month: number; year: number } | null
   summary: string
   projects: ExperienceProject[]
   highlights: string[]
