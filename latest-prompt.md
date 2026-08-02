@@ -1,4 +1,4 @@
-Your task is to implement the visual polish specification described in visual-polish-part3.md.
+Your task is to implement the visual polish specification described in visual-polish-part4.md.
 
 Requirements:
 

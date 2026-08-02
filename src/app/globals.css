@@ -36,7 +36,10 @@
 /* Scrollbar – desktop only */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+}
+
+section[id] {
+  scroll-margin-top: 80px;
 }
 
 body {
@@ -115,8 +118,8 @@ hr {
 /* Reveal animation utilities */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 300ms ease-out, transform 300ms ease-out;
+  transform: translateY(12px);
+  transition: opacity 500ms ease-out, transform 500ms ease-out;
   transition-delay: var(--reveal-delay, 0ms);
 }
 
@@ -154,5 +157,23 @@ hr {
   .section-container {
     padding-left: 16px;
     padding-right: 16px;
+  }
+}
+
+/* Reduced motion – respect user preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
   }
 }

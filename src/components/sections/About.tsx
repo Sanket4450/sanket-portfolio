@@ -41,7 +41,7 @@ export default function About() {
         <div className="mt-10 grid gap-x-12 gap-y-10 sm:grid-cols-2">
           {engineeringPrinciples.map((principle, index) => {
             const rowIndex = Math.floor(index / 2)
-            const delay = 220 + rowIndex * 80
+            const delay = 200 + rowIndex * 50
 
             return (
               <Reveal key={principle.title} delay={delay}>

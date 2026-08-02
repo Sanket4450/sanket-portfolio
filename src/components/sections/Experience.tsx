@@ -38,7 +38,7 @@ function CompanyCard({ company, index }: { company: ExperienceType; index: numbe
 
   return (
     <article className="group">
-      <Reveal delay={index * 100}>
+      <Reveal delay={Math.min(150 + index * 50, 300)}>
         {/* Company Header */}
         <div className="mb-[40px]">
           <h3 className="text-foreground mb-1 text-2xl font-bold tracking-[-0.02em]">
@@ -59,7 +59,7 @@ function CompanyCard({ company, index }: { company: ExperienceType; index: numbe
       {/* Projects */}
       {company.projects.length > 0 && (
         <div className="mb-10">
-          <Reveal delay={index * 100 + 100}>
+          <Reveal delay={Math.min(150 + index * 50 + 25, 300)}>
             <SectionLabel>Projects</SectionLabel>
             <div className="space-y-4">
               {company.projects.map(project => (
@@ -77,16 +77,16 @@ function CompanyCard({ company, index }: { company: ExperienceType; index: numbe
 
       {/* Highlights */}
       <div className="mb-10">
-        <Reveal delay={index * 100 + 150}>
+        <Reveal delay={Math.min(150 + index * 50 + 25, 300)}>
           <SectionLabel>Highlights</SectionLabel>
         </Reveal>
-        <Reveal delay={index * 100 + 200}>
+        <Reveal delay={Math.min(150 + index * 50 + 50, 300)}>
           <BulletList items={company.highlights} />
         </Reveal>
       </div>
 
       {/* Technology Groups */}
-      <Reveal delay={index * 100 + 300}>
+      <Reveal delay={Math.min(150 + index * 50 + 50, 300)}>
         <SectionLabel>Technologies</SectionLabel>
         <div className="flex flex-wrap gap-x-8 gap-y-5">
           {company.technologies.map(group => (
@@ -99,7 +99,10 @@ function CompanyCard({ company, index }: { company: ExperienceType; index: numbe
                     <span
                       key={tech}
                       className="border-border text-text-muted inline-block cursor-default rounded-[8px] border px-[10px] py-[4px] text-[12px] font-medium"
-                      style={{ backgroundColor: 'rgba(255,255,255,.025)' }}
+                      style={{
+                        backgroundColor: 'rgba(255,255,255,.025)',
+                        transition: 'background-color 200ms ease-out, border-color 200ms ease-out, color 200ms ease-out',
+                      }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.backgroundColor = 'rgba(255,255,255,.045)';
                         e.currentTarget.style.borderColor = 'rgba(255,255,255,.25)';

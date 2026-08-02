@@ -16,11 +16,13 @@ export default function Contact() {
       }}
     >
       <div className="section-container text-center">
-        <Reveal>
+        <Reveal delay={0}>
           <p className="text-text-muted mb-3 text-[14px] font-medium tracking-[0.16em] uppercase">
             {contactSection.eyebrow}
           </p>
+        </Reveal>
 
+        <Reveal delay={50}>
           <h2 className="text-foreground mb-6 max-w-[650px] mx-auto text-[32px] leading-[1.15] font-bold tracking-[-0.02em] sm:text-[36px]">
             {contactSection.title}
           </h2>

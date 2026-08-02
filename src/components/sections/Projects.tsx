@@ -59,7 +59,10 @@ function TechnologyStack({ groups }: { groups: TechnologyGroup[] }) {
               <span
                 key={tech}
                 className="border-border text-text-muted inline-block cursor-default rounded-[8px] border px-[10px] py-[4px] text-[12px] font-medium"
-                style={{ backgroundColor: 'rgba(255,255,255,.025)' }}
+                style={{
+                  backgroundColor: 'rgba(255,255,255,.025)',
+                  transition: 'background-color 200ms ease-out, border-color 200ms ease-out, color 200ms ease-out',
+                }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = 'rgba(255,255,255,.045)';
                   e.currentTarget.style.borderColor = 'rgba(255,255,255,.25)';
@@ -82,7 +85,7 @@ function TechnologyStack({ groups }: { groups: TechnologyGroup[] }) {
 function ProjectCard({ project, delay }: { project: Project; delay: number }) {
   return (
     <article>
-      <Reveal delay={delay}>
+      <Reveal delay={Math.min(delay, 300)}>
         {/* ── Header ────────────────────────────────────────── */}
         <div className="mb-10">
           <p className="text-text-metadata mb-3 text-[11px] font-medium tracking-widest uppercase">
@@ -99,17 +102,15 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
         {/* ── Left: Narrative + Engineering Depth ───────────── */}
         <div>
           {/* Overview */}
-          <Reveal delay={delay + 50}>
+          <Reveal delay={Math.min(delay + 25, 300)}>
             <p className="text-text-body mb-10 max-w-[560px] text-[15px] leading-[1.75]">
               {project.overview}
             </p>
           </Reveal>
 
           {/* Engineering Highlights */}
-          <Reveal delay={delay + 100}>
+          <Reveal delay={Math.min(delay + 50, 300)}>
             <SectionLabel>Engineering Highlights</SectionLabel>
-          </Reveal>
-          <Reveal delay={delay + 150}>
             <BulletList items={project.engineeringHighlights} />
           </Reveal>
         </div>
@@ -117,13 +118,13 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
         {/* ── Right: Technology + Outcomes ──────────────────── */}
         <div>
           {/* Technology Stack */}
-          <Reveal delay={delay + 200} className="mt-0.5">
+          <Reveal delay={Math.min(delay + 50, 300)} className="mt-0.5">
             <SectionLabel>Technology Stack</SectionLabel>
             <TechnologyStack groups={project.technologies} />
           </Reveal>
 
           {/* Outcomes */}
-          <Reveal delay={delay + 250}>
+          <Reveal delay={Math.min(delay + 50, 300)}>
             <hr />
             <SectionLabel>Outcomes</SectionLabel>
             <BulletList items={project.outcomes} />
@@ -168,7 +169,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div key={project.id}>
               {index > 0 && <hr />}
-              <ProjectCard project={project} delay={100} />
+              <ProjectCard project={project} delay={150 + 0} />
             </div>
           ))}
         </div>

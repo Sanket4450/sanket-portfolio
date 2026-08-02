@@ -29,7 +29,7 @@ export default function Skills() {
         {/* Skills Grid */}
         <div className="grid grid-cols-1 gap-x-12 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {skillGroups.map((group, i) => (
-            <Reveal key={group.category} delay={150 + i * 60}>
+            <Reveal key={group.category} delay={Math.min(200 + i * 50, 300)}>
               <div>
                 <h3 className="text-text-metadata mb-2 text-[11px] font-medium tracking-widest uppercase">
                   {group.category}
@@ -39,15 +39,18 @@ export default function Skills() {
                     <span
                       key={skill}
                       className="border-border text-text-muted inline-block cursor-default rounded-[8px] border px-[10px] py-[4px] text-[12px] font-medium"
-                      style={{ backgroundColor: 'rgba(255,255,255,.025)' }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = 'rgba(255,255,255,.045)';
-                        e.currentTarget.style.borderColor = 'rgba(255,255,255,.25)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = 'rgba(255,255,255,.025)';
-                        e.currentTarget.style.borderColor = '';
-                      }}
+                    style={{
+                      backgroundColor: 'rgba(255,255,255,.025)',
+                      transition: 'background-color 200ms ease-out, border-color 200ms ease-out, color 200ms ease-out',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = 'rgba(255,255,255,.045)';
+                      e.currentTarget.style.borderColor = 'rgba(255,255,255,.25)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'rgba(255,255,255,.025)';
+                      e.currentTarget.style.borderColor = '';
+                    }}
                     >
                       {skill}
                     </span>

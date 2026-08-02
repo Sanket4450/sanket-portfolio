@@ -23,19 +23,19 @@ export default function Hero() {
             </h1>
           </Reveal>
 
-          <Reveal delay={100}>
+          <Reveal delay={50}>
             <p className="text-text-secondary mb-6 text-[28px] leading-[1.3] font-medium tracking-[-0.02em] sm:text-[32px] lg:text-[36px]">
               {personal.headline}
             </p>
           </Reveal>
 
-          <Reveal delay={200}>
+          <Reveal delay={100}>
             <p className="text-text-body mb-10 max-w-[640px] text-[15px] leading-[1.75]">
               {personal.supporting}
             </p>
           </Reveal>
 
-          <Reveal delay={300}>
+          <Reveal delay={150}>
             <div className="flex flex-wrap items-center gap-3">
               <a
                 href={personal.resumeUrl}
@@ -115,7 +115,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 hidden -translate-x-1/2 sm:block">
-        <Reveal delay={600}>
+          <Reveal delay={200}>
           <a
             href="#about"
             className="text-text-muted hover:text-text-secondary flex flex-col items-center gap-2"

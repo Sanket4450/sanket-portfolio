@@ -221,7 +221,7 @@ export default function Nav() {
                 {isActive && (
                   <span
                     className="absolute -bottom-1 left-0 h-[2px] w-full rounded-full bg-current"
-                    style={{ transition: 'width 200ms ease-out' }}
+                    style={{ transition: 'width 200ms ease-out, opacity 200ms ease-out' }}
                   />
                 )}
               </a>
