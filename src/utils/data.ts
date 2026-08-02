@@ -56,6 +56,15 @@ export const navLinks = [
   { label: 'Contact', href: '#contact' },
 ]
 
+export const aboutSection = {
+  eyebrow: 'About',
+  title: 'Engineering Beyond Features.',
+  paragraphs: [
+    "The engineering problems I enjoy most aren't isolated features—they're systems that simplify complexity, automate business operations, and continue to scale as products grow. I enjoy understanding how products work beneath the surface and designing software that remains reliable, maintainable, and adaptable over time.",
+    "Over the past few years I've built production software across enterprise commerce, AI, IoT, logistics, healthcare, and content platforms. While every domain presents different challenges, my approach remains consistent: understand the business problem first, design maintainable architecture, and build software that teams can confidently operate, extend, and rely on long after it's shipped.",
+  ],
+}
+
 export const experienceSection = {
   eyebrow: 'Experience',
   title: 'Building scalable software that powers real businesses.',
@@ -85,29 +94,32 @@ export const contactSection = {
   availability: ['Based in India', 'Open to Remote', 'Open to Full-Time Opportunities'],
 }
 
-export const impact = [
+export const engineeringPrinciples = [
   {
-    label: 'Sync Time',
-    before: '24+ hours',
-    after: '<3 hours',
-    description: 'Amazon catalog synchronization reduced',
+    title: 'Business First',
+    description:
+      'Every technical decision should solve a meaningful business problem before introducing additional complexity. Technology is valuable only when it improves the product and the people using it.',
   },
+
   {
-    label: 'Lighthouse',
-    value: '95+',
-    description: 'Performance score after migration',
+    title: 'Scalable by Design',
+    description:
+      'I prefer architectures that remain understandable, maintainable, and reliable as products, teams, and data continue to grow rather than optimizing only for immediate delivery.',
   },
+
   {
-    label: 'Architecture',
-    value: 'Multi-Tenant SaaS',
-    description: 'Tenant-isolated with dedicated databases',
+    title: 'Engineering Ownership',
+    description:
+      'I enjoy owning products end-to-end—from understanding requirements and designing architecture to implementation, deployment, and continuous improvement in production.',
   },
+
   {
-    label: 'AI Workflows',
-    value: 'Production AI',
-    description: 'Content generation & outreach automation',
+    title: 'Continuous Learning',
+    description:
+      'Every product presents new technical challenges. I continuously refine my engineering judgment by exploring better architectures, development practices, and modern software technologies.',
   },
 ]
+
 
 export const experiences: Experience[] = [
   {
@@ -497,17 +509,6 @@ export const projects: Project[] = [
       },
     ],
   },
-]
-
-export const engineeringInterests = [
-  'SaaS Platforms',
-  'AI Workflows',
-  'Multi-Tenant Systems',
-  'Event-Driven Architectures',
-  'Recommendation Engines',
-  'Real-Time Applications',
-  'Data Processing Pipelines',
-  'Product Infrastructure',
 ]
 
 export const skillGroups: SkillGroup[] = [
