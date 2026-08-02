@@ -3,23 +3,25 @@
 @theme inline {
   /* Backgrounds */
   --color-background: #0A0A0A;
+  --color-primary-surface: #0F0F10;
+  --color-secondary-surface: #121212;
   --color-surface: #111111;
   --color-surface-elevated: #171717;
 
   /* Text */
   --color-foreground: #FAFAFA;
   --color-text-primary: #FAFAFA;
-  --color-text-secondary: #A1A1AA;
-  --color-text-muted: #84848B;
+  --color-text-secondary: #A9A9B1;
+  --color-text-muted: #8A8A91;
 
   /* Borders */
-  --color-border: #262626;
-  --color-border-hover: #404040;
+  --color-border: rgba(255, 255, 255, 0.10);
+  --color-border-hover: rgba(255, 255, 255, 0.15);
 
   /* Brand / Interactive */
   --color-accent: #FFFFFF;
   --color-accent-hover: #E4E4E7;
-  --color-selection: #FFFFFF26;
+  --color-selection: rgba(255, 255, 255, 0.18);
 
   /* Feedback */
   --color-success: #22C55E;
@@ -29,11 +31,7 @@
   --font-mono: var(--font-geist-mono), monospace;
 }
 
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-border) transparent;
-}
-
+/* Scrollbar – desktop only */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
@@ -47,9 +45,49 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Desktop scrollbar */
+@media (pointer: fine) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.28);
+  }
+
+  /* Firefox scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+  }
+}
+
+/* Text selection */
 ::selection {
-  background: var(--color-selection);
-  color: var(--color-text-primary);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Focus ring – shared by all interactive elements */
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Divider – all <hr> elements */
+hr {
+  border-color: rgba(255, 255, 255, 0.08);
+  border-width: 1px 0 0 0;
+  margin-top: 56px;
+  margin-bottom: 40px;
 }
 
 /* Reveal animation utilities */

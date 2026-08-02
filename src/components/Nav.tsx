@@ -40,6 +40,7 @@ export default function Nav() {
           ? 'bg-background/80 border-border backdrop-blur-lg'
           : 'border-transparent bg-transparent'
       }`}
+      style={scrolled ? { boxShadow: '0 2px 12px rgba(0,0,0,.45)' } : undefined}
     >
       <div className="section-container flex h-16 items-center justify-between">
         <a href="#hero" className="text-text-primary text-lg font-semibold tracking-tight">

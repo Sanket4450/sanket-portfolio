@@ -45,13 +45,13 @@ function CompanyCard({ company, index }: { company: ExperienceType; index: numbe
             {company.company}
           </h3>
           <p className="text-text-secondary mb-0.5 text-base font-medium">{company.role}</p>
-          <p className="text-text-muted text-sm">
+          <p className="text-text-muted text-[14px]">
             {dateRange} · {totalDuration}
           </p>
         </div>
 
         {/* Company Summary */}
-        <p className="text-text-secondary mb-[40px] max-w-[620px] text-[15px] leading-relaxed">
+        <p className="text-text-secondary mb-[40px] max-w-[620px] text-[15px] leading-[1.75]">
           {company.summary}
         </p>
       </Reveal>
@@ -65,7 +65,7 @@ function CompanyCard({ company, index }: { company: ExperienceType; index: numbe
               {company.projects.map(project => (
                 <div key={project.name} className="border-border rounded-xl border px-5 py-4">
                   <h4 className="text-foreground mb-1.5 text-base font-semibold">{project.name}</h4>
-                  <p className="text-text-secondary max-w-[600px] text-[15px] leading-relaxed">
+                  <p className="text-text-secondary max-w-[600px] text-[15px] leading-[1.75]">
                     {project.description}
                   </p>
                 </div>
@@ -114,7 +114,10 @@ function CompanyCard({ company, index }: { company: ExperienceType; index: numbe
 
 export default function Experience() {
   return (
-    <section id="experience" className="section-padding border-border border-t">
+    <section
+      id="experience"
+      className="bg-primary-surface section-padding border-border border-t"
+    >
       <div className="section-container">
         {/* Section Header */}
         <Reveal>
@@ -130,7 +133,7 @@ export default function Experience() {
         </Reveal>
 
         <Reveal delay={100}>
-          <p className="text-text-secondary mb-16 max-w-[700px] text-[15px] leading-relaxed">
+          <p className="text-text-secondary mb-16 max-w-[700px] text-[15px] leading-[1.75]">
             {experienceSection.description}
           </p>
         </Reveal>
@@ -139,7 +142,7 @@ export default function Experience() {
         <div>
           {experiences.map((company, index) => (
             <div key={company.company}>
-              {index > 0 && <hr className="border-border my-12" />}
+              {index > 0 && <hr />}
               <CompanyCard company={company} index={index} />
             </div>
           ))}

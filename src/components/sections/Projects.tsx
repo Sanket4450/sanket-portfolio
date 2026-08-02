@@ -89,7 +89,7 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
         <div>
           {/* Overview */}
           <Reveal delay={delay + 50}>
-            <p className="text-text-secondary mb-[40px] max-w-[560px] text-[15px] leading-relaxed">
+            <p className="text-text-secondary mb-[40px] max-w-[560px] text-[15px] leading-[1.75]">
               {project.overview}
             </p>
           </Reveal>
@@ -106,14 +106,14 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
         {/* ── Right: Technology + Outcomes ──────────────────── */}
         <div>
           {/* Technology Stack */}
-          <Reveal delay={delay + 200} className='mt-0.5'>
+          <Reveal delay={delay + 200} className="mt-0.5">
             <SectionLabel>Technology Stack</SectionLabel>
             <TechnologyStack groups={project.technologies} />
           </Reveal>
 
           {/* Outcomes */}
           <Reveal delay={delay + 250}>
-            <hr className="border-border my-6" />
+            <hr />
             <SectionLabel>Outcomes</SectionLabel>
             <BulletList items={project.outcomes} />
           </Reveal>
@@ -125,7 +125,13 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="section-padding border-border border-t">
+    <section
+      id="projects"
+      className="bg-secondary-surface section-padding border-border border-t"
+      style={{
+        boxShadow: 'inset 0 1px 0 rgba(255,255,255,.04)',
+      }}
+    >
       <div className="section-container">
         {/* Section Header */}
         <Reveal>
@@ -141,7 +147,7 @@ export default function Projects() {
         </Reveal>
 
         <Reveal delay={100}>
-          <p className="text-text-secondary mb-16 max-w-[700px] text-[15px] leading-relaxed">
+          <p className="text-text-secondary mb-16 max-w-[700px] text-[15px] leading-[1.75]">
             {projectsSection.description}
           </p>
         </Reveal>
@@ -150,7 +156,7 @@ export default function Projects() {
         <div>
           {projects.map((project, index) => (
             <div key={project.id}>
-              {index > 0 && <hr className="border-border my-12" />}
+              {index > 0 && <hr />}
               <ProjectCard project={project} delay={100} />
             </div>
           ))}

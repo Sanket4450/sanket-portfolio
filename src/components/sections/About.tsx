@@ -5,7 +5,13 @@ import { aboutSection, engineeringPrinciples } from '@/utils/data'
 
 export default function About() {
   return (
-    <section id="about" className="section-padding border-border border-t">
+    <section
+      id="about"
+      className="bg-secondary-surface section-padding border-border border-t"
+      style={{
+        boxShadow: 'inset 0 1px 0 rgba(255,255,255,.04)',
+      }}
+    >
       <div className="section-container">
         {/* Section Header */}
         <Reveal delay={0}>
@@ -24,7 +30,7 @@ export default function About() {
         <Reveal delay={100}>
           <div className="max-w-[680px] space-y-[22px]">
             {aboutSection.paragraphs.map((paragraph, index) => (
-              <p key={index} className="text-text-secondary text-[15px] leading-relaxed">
+              <p key={index} className="text-text-secondary text-[15px] leading-[1.75]">
                 {paragraph}
               </p>
             ))}
@@ -43,7 +49,7 @@ export default function About() {
                   <h3 className="text-foreground mb-2 text-base font-semibold">
                     {principle.title}
                   </h3>
-                  <p className="text-text-secondary text-[15px] leading-relaxed">
+                  <p className="text-text-secondary text-[15px] leading-[1.75]">
                     {principle.description}
                   </p>
                 </div>

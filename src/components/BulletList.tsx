@@ -6,7 +6,7 @@ export default function BulletList({ items }: { items: string[] }) {
           <span className="text-text-muted mt-[0.35em] shrink-0 text-[10px] select-none" aria-hidden="true">
             ▸
           </span>
-          <span className="max-w-[620px]">{item}</span>
+          <span className="max-w-[620px] text-[15px] leading-[1.75]">{item}</span>
         </li>
       ))}
     </ul>

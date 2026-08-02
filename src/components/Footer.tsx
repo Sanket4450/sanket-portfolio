@@ -2,7 +2,7 @@ import { footer, personal } from '@/utils/data'
 
 export default function Footer() {
   return (
-    <footer className="border-border bg-background border-t">
+    <footer className="bg-primary-surface border-border border-t">
       <div className="section-container py-8">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-text-muted text-sm">

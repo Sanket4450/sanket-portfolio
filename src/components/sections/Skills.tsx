@@ -3,7 +3,7 @@ import Reveal from '@/components/Reveal'
 
 export default function Skills() {
   return (
-    <section id="skills" className="section-padding border-border border-t">
+    <section id="skills" className="bg-primary-surface section-padding border-border border-t">
       <div className="section-container">
         {/* Section Header */}
         <Reveal>
@@ -19,7 +19,7 @@ export default function Skills() {
         </Reveal>
 
         <Reveal delay={100}>
-          <p className="text-text-secondary mb-16 max-w-[700px] text-[15px] leading-relaxed">
+          <p className="text-text-secondary mb-16 max-w-[700px] text-[15px] leading-[1.75]">
             {skillsSection.description}
           </p>
         </Reveal>

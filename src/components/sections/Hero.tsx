@@ -1,3 +1,5 @@
+'use client'
+
 import { personal } from '@/utils/data'
 import { ArrowDown, FileText, Mail } from 'lucide-react'
 import Reveal from '@/components/Reveal'
@@ -6,7 +8,13 @@ import { GitHubIcon } from '../icons/GitHubIcon'
 
 export default function Hero() {
   return (
-    <section id="hero" className="section-padding relative flex min-h-[90vh] items-center">
+    <section
+      id="hero"
+      className="section-padding relative flex min-h-[90vh] items-center"
+      style={{
+        background: `#0F0F10 radial-gradient(circle at 50% -10%, rgba(255,255,255,.035), transparent 58%), linear-gradient(180deg, transparent, rgba(255,255,255,.015))`,
+      }}
+    >
       <div className="section-container w-full">
         <div className="max-w-[700px]">
           <Reveal delay={0}>
@@ -22,7 +30,7 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={200}>
-            <p className="text-text-muted mb-10 max-w-[600px] text-lg leading-[1.7]">
+            <p className="text-text-muted mb-10 max-w-[600px] text-[15px] leading-[1.75]">
               {personal.supporting}
             </p>
           </Reveal>
@@ -34,6 +42,13 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-text-primary text-background hover:bg-accent-hover inline-flex h-11 items-center gap-2 rounded-lg px-6 text-sm font-medium transition-colors duration-200"
+                style={{ boxShadow: '0 1px 2px rgba(0,0,0,.35)' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = '0 3px 12px rgba(0,0,0,.45)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = '0 1px 2px rgba(0,0,0,.35)'
+                }}
               >
                 <FileText className="h-4 w-4" />
                 Resume
