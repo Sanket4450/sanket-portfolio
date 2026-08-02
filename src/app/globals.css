@@ -10,7 +10,7 @@
   --color-foreground: #FAFAFA;
   --color-text-primary: #FAFAFA;
   --color-text-secondary: #A1A1AA;
-  --color-text-muted: #71717A;
+  --color-text-muted: #84848B;
 
   /* Borders */
   --color-border: #262626;
@@ -36,6 +36,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {

@@ -22,6 +22,30 @@ function ProjectAttribution({ project }: { project: Project }) {
           · Built at <span className="text-text-secondary font-medium">{project.company}</span>
         </>
       )}
+      {(project.liveUrl || project.repoUrl) && (
+        <span className="ml-3 inline-flex items-center gap-2">
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-secondary hover:text-foreground inline-flex items-center gap-1 text-xs transition-colors"
+            >
+              Live ↗
+            </a>
+          )}
+          {project.repoUrl && (
+            <a
+              href={project.repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-secondary hover:text-foreground inline-flex items-center gap-1 text-xs transition-colors"
+            >
+              Repo ↗
+            </a>
+          )}
+        </span>
+      )}
     </p>
   )
 }

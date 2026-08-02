@@ -8,6 +8,8 @@ export type Project = {
   engineeringHighlights: string[]
   outcomes: string[]
   technologies: TechnologyGroup[]
+  liveUrl?: string
+  repoUrl?: string
 }
 
 export type TechnologyGroup = {
