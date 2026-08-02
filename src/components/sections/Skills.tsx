@@ -15,7 +15,7 @@ export default function Skills() {
         </Reveal>
 
         <Reveal delay={50}>
-          <h2 className="text-foreground mb-4 text-[32px] leading-[1.15] font-bold tracking-[-0.02em] sm:text-[36px]">
+          <h2 className="text-foreground mb-4 max-w-[650px] text-[32px] leading-[1.15] font-bold tracking-[-0.02em] sm:text-[36px]">
             {skillsSection.title}
           </h2>
         </Reveal>
@@ -38,10 +38,9 @@ export default function Skills() {
                   {group.skills.map(skill => (
                     <span
                       key={skill}
-                      className="border-border text-text-muted inline-block cursor-default rounded-[8px] border px-[10px] py-[4px] text-[12px] font-medium"
+                      className="border-border text-text-muted interactive inline-block cursor-default rounded-[8px] border px-[10px] py-[4px] text-[12px] font-medium"
                     style={{
                       backgroundColor: 'rgba(255,255,255,.025)',
-                      transition: 'background-color 200ms ease-out, border-color 200ms ease-out, color 200ms ease-out',
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.backgroundColor = 'rgba(255,255,255,.045)';

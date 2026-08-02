@@ -58,10 +58,9 @@ function TechnologyStack({ groups }: { groups: TechnologyGroup[] }) {
             {group.items.map(tech => (
               <span
                 key={tech}
-                className="border-border text-text-muted inline-block cursor-default rounded-[8px] border px-[10px] py-[4px] text-[12px] font-medium"
+                className="border-border text-text-muted interactive inline-block cursor-default rounded-[8px] border px-[10px] py-[4px] text-[12px] font-medium"
                 style={{
                   backgroundColor: 'rgba(255,255,255,.025)',
-                  transition: 'background-color 200ms ease-out, border-color 200ms ease-out, color 200ms ease-out',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = 'rgba(255,255,255,.045)';

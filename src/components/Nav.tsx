@@ -230,7 +230,7 @@ export default function Nav() {
           <a
             href={personal.resumeUrl}
             onClick={handleResumeClick}
-            className="bg-text-primary text-background hover:bg-accent-hover inline-flex h-12 items-center rounded-[10px] px-6 text-[14px] font-medium select-none"
+            className="bg-text-primary text-background hover:bg-accent-hover inline-flex h-9 items-center rounded-[10px] px-4 text-[14px] font-medium select-none"
             style={{ boxShadow: '0 1px 2px rgba(0,0,0,.35)' }}
             onMouseEnter={(e) => {
               e.currentTarget.style.boxShadow = '0 3px 12px rgba(0,0,0,.45)';
@@ -255,8 +255,7 @@ export default function Nav() {
       </div>
 
       {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="bg-background border-border border-t md:hidden">
+      <div className={`mobile-menu ${mobileOpen ? 'open' : ''} absolute top-full left-0 right-0 bg-background border-border border-t md:hidden`}>
           <nav className="section-container flex flex-col gap-1 py-4">
             {navLinks.map(link => {
               const isActive = activeSection === link.href.replace('#', '');
@@ -284,7 +283,6 @@ export default function Nav() {
             </a>
           </nav>
         </div>
-      )}
     </header>
   )
 }
